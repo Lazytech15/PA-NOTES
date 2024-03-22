@@ -91,7 +91,7 @@
 .input-form{
     margin-top: 40px ;
     height:auto;
-    width: 40%;
+    max-width: 40%;
     min-width: 180px;
     padding: 10px;
     border-radius: 5px;
