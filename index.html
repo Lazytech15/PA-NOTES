@@ -6,14 +6,19 @@
     <title>(PANOTES) Prospectus Academic Notation of Enrolled Students</title>
     <link rel="stylesheet" href="index.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
-    
-
+    <link rel="icon" href="PA-NOTES.jpg" style="width: 16px; height: 16px; border-radius: 50%;" type="image/jpeg">
 </head>
 <body>
     <section>
         <div class="header-container" id="header-container">
-            <h1>PA-NOTES</h1>
-            <p>Prospectus Academic Notation of Enrolled Students</p>
+            <div class="log-container">
+                <img src="PA-NOTES.jpg" alt="">
+            </div>
+            <div class="logo-text">
+                <h1>PA-NOTES</h1>
+                <p>Prospectus Academic Notation of Enrolled Students</p>
+            </div>
+            
         </div>
         <div class="side-input-container" id="side-input-container">
             <input type="file" id="file-upload" style="display: none;" accept=".pdf" draggable="true"/>
@@ -58,8 +63,11 @@
         </div>
         <div class="student-form" id="student-form">
             <div class="student-container">
-                <h1>ICCT Colleges Foundation, Inc.</h1>
-                <h4>Antipolo</h4>
+                <h1 id="school_name"></h1>
+                <h3 id="school_branch"></h3>
+                <h4 id="school_course"></h4>
+                <h6 id="school_curriculum"></h6>
+                <p id="student_course"></p>
                 <hr>
                 <p id="student_details"></p>
                 <hr>
