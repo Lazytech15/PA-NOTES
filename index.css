@@ -7,8 +7,9 @@
 }
 .header-container{
     margin-top: 30px;
-    text-align: center;
+    display: flex;
 
+    justify-content: space-between;
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
@@ -19,6 +20,13 @@
 }
 .header-container p{
     font-size: 14px;
+}
+.log-container img{
+    margin-top: -10px;
+    margin-right: 10px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
 }
 .side-input-container{
     display: flex;
@@ -121,7 +129,7 @@ section{
     overflow: auto;
     display: none;
 
-     font-family: "Aleo", serif;
+    font-family: "Aleo", serif;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
@@ -166,7 +174,9 @@ section{
 } 
 .student-form p,
 .student-form h1,
-.student-form h4{
+.student-form h4,
+.student-form h3,
+.student-form h6{
     margin:10px 0px 10px;
     text-align: center;
     font-family: Verdana;
@@ -178,6 +188,14 @@ section{
 }
 table{
     width: 100%;
+
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+        font-size: 1em;
 }
 table h3{
     text-align: center;
@@ -189,6 +207,8 @@ td{
 }
 td:nth-child(1){
     padding-right: 50px;
+    font: 1.1em;
+    font-weight: bolder;
 }
 td:nth-child(3){
     text-align: right;
