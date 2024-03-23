@@ -1,8 +1,11 @@
 const ToDownload = document.getElementById('downloadData');
 const confirm_btn = document.getElementById('btn-confirm');
+const cancel_button = document.getElementById('close-btn');
+
 
 let studentDetails = [];
 const Subject_Container=[];
+let firstThreeRows = []; // Array to store the first 3 rows
 
 
 
@@ -51,12 +54,11 @@ $('#file-upload-label').on('drop', function(event) {
     var file = event.originalEvent.dataTransfer.files[0];
     document.getElementById('file-upload-label').style="display:none;"
     document.getElementById('evaluation-container').style="display:block;"
-    document.getElementById('side-input-container').style="top:30px; right:10px;transform:initial; height: auto;"
+    document.getElementById('side-input-container').style="top:20px; right:10px;transform:initial; height: auto;"
+    document.getElementById('copy-right').style="bottom:-45px;"
     document.getElementById('header-container').style="display:none;"
     document.getElementById('input-form').style="display:block;"
     handleFileUpload(file);
-    
-    console.log(file);
 });
 
 $('#file-upload').on("change", function() {
@@ -64,13 +66,15 @@ $('#file-upload').on("change", function() {
         var file = this.files[0];
         document.getElementById('file-upload-label').style="display:none;"
         document.getElementById('evaluation-container').style="display:block;"
-        document.getElementById('side-input-container').style="top:30px; right:10px;transform:initial; height: auto;"
+        document.getElementById('side-input-container').style="top:20px; right:10px;transform:initial; height: auto;"
+        document.getElementById('copy-right').style="bottom:-45px;"
         document.getElementById('header-container').style="display:none;"
         document.getElementById('input-form').style="display:block;"
         handleFileUpload(file);
-        console.log(file);
     } else {
         console.log('No file selected');
+        document.getElementById('file-upload-label').style="display:block;"
+        document.getElementById('header-container').style="display:block;"
     }
 });
 
@@ -108,7 +112,6 @@ function handleFileUpload(file) {
 
 function renderPage(pageNumber, pdf) {
     pdf.getPage(pageNumber).then(function(page) {
-        console.log('Page ' + pageNumber + ' loaded');
         
         var scale = 1.5;
         var viewport = page.getViewport({scale: scale});
@@ -130,51 +133,53 @@ function renderPage(pageNumber, pdf) {
         };
         var renderTask = page.render(renderContext);
         renderTask.promise.then(function () {
-            console.log('Page ' + pageNumber + ' rendered');
         });
 
-
-let List_Subjects=[];
-let group = [];
-async function processPage(pageNumber, pdf) {
-    return getPageText(pageNumber, pdf).then(function(textPage) {
-        var rows = textPage.split('\n');
-        
-        for (let i = 0; i < rows.length; i++) {
-            if (rows[i].match("OL")) {
-                const columns = rows[i].split(' ');
-                let newRow = columns.join(' ');
-                const COURSE_CODE = newRow;
-                group.push({COURSE_CODE});
-            } else if (rows[i].trim() === '' && group.length > 0) {
-                List_Subjects.push(group);
-            } else if (rows[i].match("Student")) {
-                const student = rows[i];
-                studentDetails = student;
+        let List_Subjects=[];
+        let group = [];
+        async function processPage(pageNumber, pdf) {
+            return getPageText(pageNumber, pdf).then(function(textPage) {
+                var rows = textPage.split('\n');
+                
+                for (let i = 0; i < rows.length; i++) {
+                    if (rows[i].match("OL")) {
+                        const columns = rows[i].split(' ');
+                        let newRow = columns.join(' ');
+                        const COURSE_CODE = newRow;
+                        group.push({COURSE_CODE});
+                    } else if (rows[i].trim() === '' && group.length > 0) {
+                        List_Subjects.push(group);
+                    } else if (rows[i].match("Student")) {
+                        const student = rows[i];
+                        studentDetails = student;
+                    }else if (1 < 4){
+                        firstThreeRows.push(rows[i]);
+                    }
+            }
+                // Push the last group if it's not empty
+                if (group.length > 0) {
+                    List_Subjects.push(group);
+                }
+            });
         }
-    }
-        // Push the last group if it's not empty
-        if (group.length > 0) {
-            List_Subjects.push(group);
-        }
-    });
-}
 
 // Process the first page
 processPage(1, pdf)
     .then(function() {
-        console.log('Finished processing page 1');
         return processPage(2, pdf);
+        
     })
     .then(function() {
-        console.log('Finished processing page 2');
-        console.log(studentDetails);
+        document.getElementById('school_name').innerHTML = firstThreeRows[0];
+        document.getElementById('school_branch').innerHTML = firstThreeRows[1];
+        document.getElementById('school_course').innerHTML = firstThreeRows[2];
+        document.getElementById('school_curriculum').innerHTML = firstThreeRows[3];
         document.getElementById('student_details').innerHTML = studentDetails; 
         List_Subjects = [...new Set(List_Subjects)];
         Subject_Container.push(...List_Subjects);
-        
-        
-    }); 
+        alert("Copy all the total units of every semester and enter it to the field on the right side-form, you will see the units in the left-side 'STUDENT-EVALUATION' ");
+    });
+     
     });
 }
 
@@ -186,8 +191,6 @@ let data = [];
 
 // Iterate over each table body
 tableBodies.forEach((tableBody, tableIndex) => {
-    console.log(`Table ${tableIndex + 1}:`);
-    
 
     // Get all the rows in the current table body
     const rows = tableBody.querySelectorAll('tr');
@@ -211,21 +214,42 @@ function addCenteredText(doc, text, y) {
 }
 
 let doc = new jsPDF('p', 'pt', 'a4');
-let startY = 30;
+let startY = 40;
 
-doc.setFontSize(16);
+doc.setFontSize(20);
 doc.setFontStyle('bold');
-addCenteredText(doc, "ICCT Colleges Foundation Inc.", startY);
-startY += 30;
+addCenteredText(doc, `${firstThreeRows[0]}`, startY);
+startY += 20;
+
 
 doc.setFontSize(13);
-addCenteredText(doc, "ANTIPOLO BRANCH", startY);
+addCenteredText(doc, `${firstThreeRows[1]}`, startY);
+startY += 30;
+
+doc.setFontStyle('normal');
+doc.setFontSize(11);
+addCenteredText(doc, `${firstThreeRows[2]}`, startY);
+startY += 10;
+
+doc.setFontSize(9);
+addCenteredText(doc, `${firstThreeRows[3]}`, startY);
 startY += 30;
 
 doc.setFontSize(11);
 doc.setFontStyle('normal');
+
+// Draw a horizontal line above the text
+doc.line(20, startY - 15, 570, startY - 15); 
+
+let startYForLine = startY; // Store the startY value before adding the text
+
 addCenteredText(doc, `${studentDetails}`, startY);
 startY += 30;
+
+// Draw a horizontal line below the text using startYForLine
+doc.line(20, startYForLine + 8, 570, startYForLine + 8); 
+
+
 
 doc.setFontSize(14);
 
@@ -256,7 +280,7 @@ allData.forEach((sectionData, index) => {
     let header = theads[index].innerText.trim();
     
     // Set the font size
-doc.setFontSize(11); // Adjust the font size as needed
+doc.setFontSize(10.5); // Adjust the font size as needed
 doc.setFontStyle('bold');
 // Calculate the width of the header text
 let headerWidth = doc.getStringUnitWidth(header) * doc.internal.getFontSize() / doc.internal.scaleFactor;
@@ -267,17 +291,17 @@ let pageCenter = doc.internal.pageSize.width / 2;
 // Add the header to the PDF, centered
 doc.text(header, pageCenter - (headerWidth / 2), startY);
 doc.autoTable({
-    head: [['Course Code', 'Course Description', 'Grade Input']],
+    head: [['COURSE CODE', 'COURSE DESCRIPTION', 'GRADES']],
     body: sectionData,
     startY: startY + 10,
     styles: {
-        fontSize: 9,
+        fontSize: 8,
         cellPadding: 2,
     },
     columnStyles: {
-        0: {cellWidth: 100, halign:'left'},
-        1: {cellWidth: 330, halign: 'left'},
-        2: {cellWidth: 75, halign: 'center'}
+        0: {cellWidth: 100, halign:'left',fontSize:'9',fontStyle:'bold'},
+        1: {cellWidth: 350, halign: 'left'},
+        2: {cellWidth: 50, halign: 'center',fontStyle: 'bold'}
     },
     headStyles: {
         fillColor: [0, 0, 0],
@@ -293,8 +317,12 @@ doc.autoTable({
     startY = doc.autoTable.previous.finalY + 30; // Adjust this value as needed
 });
 
-doc.save('Prospectus.pdf');
+doc.save('Unofficial-Prospectus.pdf');
     });
+
+    cancel_button.addEventListener('click', function(){
+        window.location.reload();
+    })
 
     confirm_btn.addEventListener('click', function(){
         document.getElementById('side-input-container').style="display:none;"
@@ -363,7 +391,6 @@ doc.save('Prospectus.pdf');
                     DataGathered.splice(index, 1);
                 }
             }
-            console.log(dataEqualToValue);
             // Return the data that adds up to the sum and the first values
             return {
                 dataEqualToValue,
@@ -439,5 +466,3 @@ doc.save('Prospectus.pdf');
     processSemesterData(resultSem10, 'student-FourthYear-FirstSem');
     processSemesterData(resultSem11, 'student-FourthYear-SecondSem');
     })
-
-
