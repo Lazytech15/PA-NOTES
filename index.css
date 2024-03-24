@@ -310,11 +310,13 @@ td:nth-child(3){
         font-size: 0.8em;
     }
     .student-form{
+        top:47%;
         font-size: 0.9em;
         height: 75%;
+        width: 75%;
     }
     td{
-        font-size: 0.6em;
+        font-size: 0.7em;
     }
     td:nth-child(1){
         padding-right: 10px;
