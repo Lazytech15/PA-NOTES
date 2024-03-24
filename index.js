@@ -1,1 +1,544 @@
-const _0x5e70da=_0x402a;(function(_0x17079c,_0x114408){const _0x6b98c4=_0x402a,_0x43a708=_0x17079c();while(!![]){try{const _0x5579dd=-parseInt(_0x6b98c4(0x235))/0x1*(-parseInt(_0x6b98c4(0x25a))/0x2)+parseInt(_0x6b98c4(0x24a))/0x3+-parseInt(_0x6b98c4(0x261))/0x4+-parseInt(_0x6b98c4(0x275))/0x5*(-parseInt(_0x6b98c4(0x245))/0x6)+-parseInt(_0x6b98c4(0x278))/0x7*(-parseInt(_0x6b98c4(0x213))/0x8)+-parseInt(_0x6b98c4(0x1f2))/0x9*(-parseInt(_0x6b98c4(0x204))/0xa)+-parseInt(_0x6b98c4(0x1f8))/0xb*(parseInt(_0x6b98c4(0x22e))/0xc);if(_0x5579dd===_0x114408)break;else _0x43a708['push'](_0x43a708['shift']());}catch(_0x33c7dd){_0x43a708['push'](_0x43a708['shift']());}}}(_0x2fc8,0xc92cd));const ToDownload=document['getElementById'](_0x5e70da(0x266)),confirm_btn=document[_0x5e70da(0x26b)]('btn-confirm'),cancel_button=document[_0x5e70da(0x26b)](_0x5e70da(0x202));let studentDetails=[];const Subject_Container=[];let firstThreeRows=[],AllTotalUnits=[],uniqueAllTotalUnits=[];const width=window[_0x5e70da(0x1ec)];function getPageText(_0x12e0e5,_0x2dbe8a){return new Promise(function(_0xdd6786,_0x3d7f0a){const _0x4a1570=_0x402a;_0x2dbe8a[_0x4a1570(0x1f3)](_0x12e0e5)[_0x4a1570(0x242)](function(_0x158aba){const _0x189d82=_0x4a1570;_0x158aba[_0x189d82(0x21f)]()[_0x189d82(0x242)](function(_0x54364a){const _0x2c2487=_0x189d82;var _0x2dae42=_0x54364a[_0x2c2487(0x24f)],_0x90077a={};for(var _0x512366=0x0;_0x512366<_0x2dae42[_0x2c2487(0x1f6)];_0x512366++){var _0x1c5196=_0x2dae42[_0x512366],_0x200154=Math[_0x2c2487(0x24c)](_0x1c5196[_0x2c2487(0x250)][0x5]);if(!_0x90077a[_0x200154])_0x90077a[_0x200154]=[];_0x90077a[_0x200154]['push'](_0x1c5196['str']);}var _0x580e52=Object[_0x2c2487(0x24b)](_0x90077a)[_0x2c2487(0x22b)]((_0x8d5af0,_0x5525f7)=>-_0x8d5af0+_0x5525f7),_0x4f9473='';for(var _0x512366=0x0;_0x512366<_0x580e52[_0x2c2487(0x1f6)];_0x512366++){_0x4f9473+=_0x90077a[_0x580e52[_0x512366]][_0x2c2487(0x21c)]('\x20')+'\x0a';}_0xdd6786(_0x4f9473);});});});}$(_0x5e70da(0x268))['on']('dragover',function(_0x57dcae){const _0x4fb86f=_0x5e70da;_0x57dcae[_0x4fb86f(0x1ee)](),$(this)[_0x4fb86f(0x205)]('dragover');}),$(_0x5e70da(0x268))['on'](_0x5e70da(0x209),function(_0x17c328){const _0x4d4b84=_0x5e70da;_0x17c328[_0x4d4b84(0x1ee)](),$(this)['removeClass'](_0x4d4b84(0x249));}),$(_0x5e70da(0x268))['on']('drop',function(_0x549980){const _0x63736f=_0x5e70da;_0x549980[_0x63736f(0x1ee)]();var _0x362e86=_0x549980['originalEvent'][_0x63736f(0x20f)][_0x63736f(0x243)][0x0];document[_0x63736f(0x26b)](_0x63736f(0x21a))[_0x63736f(0x25f)]=_0x63736f(0x25e),document[_0x63736f(0x26b)]('evaluation-container')[_0x63736f(0x25f)]='display:block;';const _0x317103=window['innerWidth'];_0x317103>0x2bc&&(document[_0x63736f(0x26b)]('side-input-container')[_0x63736f(0x25f)]=_0x63736f(0x26e),document['getElementById']('copy-right')[_0x63736f(0x25f)]=_0x63736f(0x1f7),document[_0x63736f(0x26b)](_0x63736f(0x1f1))[_0x63736f(0x25f)]=_0x63736f(0x252),document[_0x63736f(0x26b)]('header-container')[_0x63736f(0x25f)]=_0x63736f(0x25e)),document[_0x63736f(0x26b)](_0x63736f(0x23a))[_0x63736f(0x25f)]='display:block;',handleFileUpload(_0x362e86);}),$(_0x5e70da(0x270))['on'](_0x5e70da(0x212),function(){const _0x2971db=_0x5e70da;if(this[_0x2971db(0x243)][_0x2971db(0x1f6)]>0x0){var _0x30539e=this[_0x2971db(0x243)][0x0];document[_0x2971db(0x26b)]('file-upload-label')[_0x2971db(0x25f)]='display:none;',document[_0x2971db(0x26b)](_0x2971db(0x215))[_0x2971db(0x25f)]=_0x2971db(0x1fd),width>0x2bc&&(document[_0x2971db(0x26b)](_0x2971db(0x233))[_0x2971db(0x25f)]='top:20px;\x20right:10px;transform:initial;\x20height:\x20auto;',document[_0x2971db(0x26b)]('copy-right')[_0x2971db(0x25f)]=_0x2971db(0x1f7),document['getElementById']('side-copy-right')[_0x2971db(0x25f)]=_0x2971db(0x252),document[_0x2971db(0x26b)](_0x2971db(0x25d))['style']=_0x2971db(0x25e)),document[_0x2971db(0x26b)](_0x2971db(0x226))[_0x2971db(0x25f)]=_0x2971db(0x23f),document[_0x2971db(0x26b)](_0x2971db(0x23a))[_0x2971db(0x25f)]=_0x2971db(0x1fd),handleFileUpload(_0x30539e);}else console[_0x2971db(0x23d)](_0x2971db(0x257)),document[_0x2971db(0x26b)](_0x2971db(0x21a))['style']=_0x2971db(0x1fd),document[_0x2971db(0x26b)]('header-container')[_0x2971db(0x25f)]='display:block;';}),$(_0x5e70da(0x268))['on']('click',function(){});function _0x2fc8(){const _0x1b1a12=['Canvas\x20element\x20with\x20id\x20\x22the-canvas','pageSize','internal','Unofficial-Prospectus.pdf','close-btn','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','1146130tzWHaV','addClass','ThirdYear-FirstSem','readAsArrayBuffer','firstValues','dragleave\x20drop','ThirdYear-ThirdSem','student-ThirdYear-ThirdSem','map','mergedParts','reload','dataTransfer','dataEqualToValue','school_course','change','49752dFPqNV','student_details','evaluation-container','splice','student-FirstYear-ThirdSem','school_branch','ThirdYear-SecondSem','file-upload-label','student-FourthYear-FirstSem','join','forEach','COURSE_CODE','getTextContent','bold','result','querySelector','student-FourthYear-SecondSem','save','width','section','shift','type','.input_grades','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>','sort','trim','FirstYear-FirstSem','12Elvtbe','student-FirstYear-SecondSem','setFontSize','querySelectorAll','center','side-input-container','SecondYear-FirstSem','15146SUelFO','student-ThirdYear-FirstSem','findIndex','student-ThirdYear-SecondSem','addEventListener','input-form','text','school_name','log','push','margin-top:0px;','tbody','student-FirstYear-FirstSem','then','files','lastPart','2150808vCzanK','</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20class=\x22input_grades\x22\x20placeholder=\x22Grades\x22></input>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</td>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','left','createElement','dragover','4878888iPynFN','keys','round','PDF\x20loaded','the-canvas','items','transform','slice','display:\x20flex;bottom:-65px','line','FourthYear-FirstSem','previous','SecondYear-SecondSem','No\x20file\x20selected','innerText','setFontStyle','216chZBjX','student-SecondYear-ThirdSem','FirstYear-ThirdSem','header-container','display:none;','style','pop','3568228kkcdMY','student-SecondYear-SecondSem','innerHTML','scaleFactor','normal','downloadData','name','#file-upload-label','\x22\x20not\x20found.','firstValue','getElementById','finalY','SecondYear-ThirdSem','top:20px;\x20right:10px;transform:initial;\x20height:\x20auto;','getFontSize','#file-upload','height','getViewport','location','#prospectus-table\x20thead','15MpSAHA','split','render','1561YkCGBt','innerWidth','value','preventDefault','match','click','side-copy-right','108mCTadF','getPage','COURSE\x20CODE','FirstYear-SecondSem','length','display:\x20none;','59219501MDKEzj','autoTable','error','getStringUnitWidth','FourthYear-SecondSem','display:block;'];_0x2fc8=function(){return _0x1b1a12;};return _0x2fc8();}function handleFileUpload(_0x1be8bd){const _0x514eda=_0x5e70da;if(_0x1be8bd[_0x514eda(0x228)]!=='application/pdf'){console[_0x514eda(0x1fa)](_0x1be8bd[_0x514eda(0x267)],'is\x20not\x20a\x20.pdf\x20file.');return;}var _0x43d924=new FileReader();_0x43d924['onload']=function(){const _0x454e76=_0x514eda;var _0x2cfc53=new Uint8Array(this[_0x454e76(0x221)]);pdfjsLib['getDocument'](_0x2cfc53)['promise'][_0x454e76(0x242)](function(_0x4cdd7a){const _0x4eafb3=_0x454e76;console[_0x4eafb3(0x23d)](_0x4eafb3(0x24d));var _0x3c6c9b=0x1;renderPage(_0x3c6c9b,_0x4cdd7a),_0x3c6c9b=0x2,renderPage(_0x3c6c9b,_0x4cdd7a);},function(_0x4ababc){const _0x13707a=_0x454e76;console[_0x13707a(0x1fa)](_0x4ababc);});},_0x43d924[_0x514eda(0x207)](_0x1be8bd),$(_0x514eda(0x268))[_0x514eda(0x23b)](_0x1be8bd[_0x514eda(0x267)]);}function renderPage(_0x4a7561,_0x400c68){const _0x3d3f5d=_0x5e70da;_0x400c68[_0x3d3f5d(0x1f3)](_0x4a7561)[_0x3d3f5d(0x242)](function(_0x3ed4f9){const _0x52ce04=_0x3d3f5d;var _0x1bcb40=1.5,_0xd36876=_0x3ed4f9[_0x52ce04(0x272)]({'scale':_0x1bcb40}),_0x3f8a56=document['getElementById'](_0x52ce04(0x24e)+_0x4a7561);if(!_0x3f8a56){console[_0x52ce04(0x1fa)](_0x52ce04(0x1fe)+_0x4a7561+_0x52ce04(0x269));return;}var _0x4503cf=_0x3f8a56['getContext']('2d');_0x3f8a56[_0x52ce04(0x271)]=_0xd36876[_0x52ce04(0x271)],_0x3f8a56[_0x52ce04(0x225)]=_0xd36876[_0x52ce04(0x225)];var _0x3f4237={'canvasContext':_0x4503cf,'viewport':_0xd36876},_0x4c7f0b=_0x3ed4f9[_0x52ce04(0x277)](_0x3f4237);_0x4c7f0b['promise'][_0x52ce04(0x242)](function(){});let _0x29336a=[],_0x3982cf=[];async function _0x250742(_0x2ffec8,_0x19b337){const _0x46cdee=_0x52ce04;return getPageText(_0x2ffec8,_0x19b337)[_0x46cdee(0x242)](function(_0x370425){const _0x71067d=_0x46cdee;var _0x3a8633=_0x370425['split']('\x0a');for(let _0x40e7db=0x0;_0x40e7db<_0x3a8633[_0x71067d(0x1f6)];_0x40e7db++){if(Number['isInteger'](parseFloat(_0x3a8633[_0x40e7db])))AllTotalUnits[_0x71067d(0x23e)](_0x3a8633[_0x40e7db]);else{if(_0x3a8633[_0x40e7db][_0x71067d(0x1ef)]('OL')){const _0x85670b=_0x3a8633[_0x40e7db]['split']('\x20');let _0x28126d=_0x85670b[_0x71067d(0x21c)]('\x20');const _0x42a6cf=_0x28126d;_0x3982cf['push']({'COURSE_CODE':_0x42a6cf});}else{if(_0x3a8633[_0x40e7db][_0x71067d(0x22c)]()===''&&_0x3982cf[_0x71067d(0x1f6)]>0x0)_0x29336a['push'](_0x3982cf);else{if(_0x3a8633[_0x40e7db][_0x71067d(0x1ef)]('Student')){const _0x1ec3a4=_0x3a8633[_0x40e7db];studentDetails=_0x1ec3a4;}else 0x1<0x4&&firstThreeRows[_0x71067d(0x23e)](_0x3a8633[_0x40e7db]);}}}}_0x3982cf[_0x71067d(0x1f6)]>0x0&&_0x29336a[_0x71067d(0x23e)](_0x3982cf);});}_0x250742(0x1,_0x400c68)[_0x52ce04(0x242)](function(){return _0x250742(0x2,_0x400c68);})[_0x52ce04(0x242)](function(){const _0x4ab115=_0x52ce04;document[_0x4ab115(0x26b)](_0x4ab115(0x23c))[_0x4ab115(0x263)]=firstThreeRows[0x0],document[_0x4ab115(0x26b)](_0x4ab115(0x218))[_0x4ab115(0x263)]=firstThreeRows[0x1],document[_0x4ab115(0x26b)](_0x4ab115(0x211))[_0x4ab115(0x263)]=firstThreeRows[0x2],document[_0x4ab115(0x26b)]('school_curriculum')[_0x4ab115(0x263)]=firstThreeRows[0x3],document[_0x4ab115(0x26b)](_0x4ab115(0x214))[_0x4ab115(0x263)]=studentDetails,_0x29336a=[...new Set(_0x29336a)],Subject_Container[_0x4ab115(0x23e)](..._0x29336a),uniqueAllTotalUnits=[...new Set(AllTotalUnits)],width<0x2bc&&(document[_0x4ab115(0x26b)](_0x4ab115(0x22d))[_0x4ab115(0x1ed)]=uniqueAllTotalUnits[0x0]||0x0,document[_0x4ab115(0x26b)]('FirstYear-SecondSem')['value']=uniqueAllTotalUnits[0x1]||0x0,document['getElementById'](_0x4ab115(0x25c))['value']=uniqueAllTotalUnits[0x2]||0x0,document['getElementById']('SecondYear-FirstSem')[_0x4ab115(0x1ed)]=uniqueAllTotalUnits[0x3]||0x0,document[_0x4ab115(0x26b)](_0x4ab115(0x256))[_0x4ab115(0x1ed)]=uniqueAllTotalUnits[0x4]||0x0,document[_0x4ab115(0x26b)]('SecondYear-ThirdSem')[_0x4ab115(0x1ed)]=uniqueAllTotalUnits[0x5]||0x0,document['getElementById'](_0x4ab115(0x206))['value']=uniqueAllTotalUnits[0x6]||0x0,document[_0x4ab115(0x26b)](_0x4ab115(0x219))[_0x4ab115(0x1ed)]=uniqueAllTotalUnits[0x7]||0x0,document[_0x4ab115(0x26b)](_0x4ab115(0x20a))[_0x4ab115(0x1ed)]=uniqueAllTotalUnits[0x8]||0x0,document[_0x4ab115(0x26b)](_0x4ab115(0x254))[_0x4ab115(0x1ed)]=uniqueAllTotalUnits[0x9]||0x0,document[_0x4ab115(0x26b)](_0x4ab115(0x1fc))[_0x4ab115(0x1ed)]=uniqueAllTotalUnits[0xa]||0x0,document[_0x4ab115(0x26b)]('FourthYear-ThirdSem')[_0x4ab115(0x1ed)]=uniqueAllTotalUnits[0xb]||0x0);});});}function _0x402a(_0x4bdc75,_0x40a610){const _0x2fc81e=_0x2fc8();return _0x402a=function(_0x402a5f,_0x27503c){_0x402a5f=_0x402a5f-0x1ec;let _0x4de765=_0x2fc81e[_0x402a5f];return _0x4de765;},_0x402a(_0x4bdc75,_0x40a610);}ToDownload[_0x5e70da(0x239)]('click',function(){const _0x3572d6=_0x5e70da,_0x67ae37=document[_0x3572d6(0x231)](_0x3572d6(0x240));let _0x3f5b0f=[];_0x67ae37['forEach']((_0x205147,_0x5c97b2)=>{const _0x53720a=_0x3572d6,_0x180fb5=_0x205147[_0x53720a(0x231)]('tr');_0x180fb5['forEach']((_0x5c0a17,_0x26f44f)=>{const _0x1a386c=_0x53720a,_0x861438=_0x5c0a17[_0x1a386c(0x231)]('td');if(_0x861438[_0x1a386c(0x1f6)]>=0x3){const _0x2f1b21=_0x861438[0x0]['innerText'],_0x286e25=_0x861438[0x1][_0x1a386c(0x258)],_0x3da0b7=_0x861438[0x2][_0x1a386c(0x222)](_0x1a386c(0x229))[_0x1a386c(0x1ed)];_0x3f5b0f[_0x1a386c(0x23e)]([_0x26f44f,_0x2f1b21,_0x286e25,_0x3da0b7]);}});});function _0x5b9aa0(_0x2a0532,_0x3fb287,_0x490b73){const _0x1cb7dc=_0x3572d6;let _0x2bfb96=_0x2a0532[_0x1cb7dc(0x1fb)](_0x3fb287)*_0x2a0532[_0x1cb7dc(0x200)]['getFontSize']()/_0x2a0532[_0x1cb7dc(0x200)][_0x1cb7dc(0x264)],_0x4fd36c=_0x2a0532[_0x1cb7dc(0x200)][_0x1cb7dc(0x1ff)]['width']/0x2;_0x2a0532[_0x1cb7dc(0x23b)](_0x3fb287,_0x4fd36c-_0x2bfb96/0x2,_0x490b73);}let _0x385f5f=new jsPDF('p','pt','a4'),_0x4f0ad3=0x28;_0x385f5f[_0x3572d6(0x230)](0x14),_0x385f5f[_0x3572d6(0x259)](_0x3572d6(0x220)),_0x5b9aa0(_0x385f5f,''+firstThreeRows[0x0],_0x4f0ad3),_0x4f0ad3+=0x14,_0x385f5f[_0x3572d6(0x230)](0xd),_0x5b9aa0(_0x385f5f,''+firstThreeRows[0x1],_0x4f0ad3),_0x4f0ad3+=0x1e,_0x385f5f['setFontStyle'](_0x3572d6(0x265)),_0x385f5f[_0x3572d6(0x230)](0xb),_0x5b9aa0(_0x385f5f,''+firstThreeRows[0x2],_0x4f0ad3),_0x4f0ad3+=0xa,_0x385f5f[_0x3572d6(0x230)](0x9),_0x5b9aa0(_0x385f5f,''+firstThreeRows[0x3],_0x4f0ad3),_0x4f0ad3+=0x1e,_0x385f5f[_0x3572d6(0x230)](0xb),_0x385f5f[_0x3572d6(0x259)](_0x3572d6(0x265)),_0x385f5f['line'](0x14,_0x4f0ad3-0xf,0x23a,_0x4f0ad3-0xf);let _0x1d3cb9=_0x4f0ad3;_0x5b9aa0(_0x385f5f,''+studentDetails,_0x4f0ad3),_0x4f0ad3+=0x1e,_0x385f5f[_0x3572d6(0x253)](0x14,_0x1d3cb9+0x8,0x23a,_0x1d3cb9+0x8),_0x385f5f[_0x3572d6(0x230)](0xe);let _0x288602=document[_0x3572d6(0x231)](_0x3572d6(0x274)),_0x4380a0=[],_0x17ebd7=[];studentDetails;for(let _0x36ae06=0x0;_0x36ae06<_0x3f5b0f[_0x3572d6(0x1f6)];_0x36ae06++){_0x3f5b0f[_0x36ae06][0x0]===0x0&&_0x36ae06!==0x0&&(_0x4380a0[_0x3572d6(0x23e)](_0x17ebd7),_0x17ebd7=[]),_0x17ebd7[_0x3572d6(0x23e)](_0x3f5b0f[_0x36ae06]['slice'](0x1));}_0x4380a0[_0x3572d6(0x23e)](_0x17ebd7),_0x4380a0[_0x3572d6(0x21d)]((_0x58ea40,_0x3d5cae)=>{const _0x1fcdcd=_0x3572d6;let _0x93feaa=_0x288602[_0x3d5cae]['innerText']['trim']();_0x385f5f[_0x1fcdcd(0x230)](10.5),_0x385f5f[_0x1fcdcd(0x259)]('bold');let _0x44a768=_0x385f5f[_0x1fcdcd(0x1fb)](_0x93feaa)*_0x385f5f[_0x1fcdcd(0x200)][_0x1fcdcd(0x26f)]()/_0x385f5f[_0x1fcdcd(0x200)]['scaleFactor'],_0x3553f1=_0x385f5f[_0x1fcdcd(0x200)]['pageSize'][_0x1fcdcd(0x225)]/0x2;_0x385f5f[_0x1fcdcd(0x23b)](_0x93feaa,_0x3553f1-_0x44a768/0x2,_0x4f0ad3),_0x385f5f[_0x1fcdcd(0x1f9)]({'head':[[_0x1fcdcd(0x1f4),'COURSE\x20DESCRIPTION','GRADES']],'body':_0x58ea40,'startY':_0x4f0ad3+0xa,'styles':{'fontSize':0x8,'cellPadding':0x2},'columnStyles':{0x0:{'cellWidth':0x64,'halign':_0x1fcdcd(0x247),'fontSize':'9','fontStyle':_0x1fcdcd(0x220)},0x1:{'cellWidth':0x15e,'halign':_0x1fcdcd(0x247)},0x2:{'cellWidth':0x32,'halign':_0x1fcdcd(0x232),'fontStyle':_0x1fcdcd(0x220)}},'headStyles':{'fillColor':[0x0,0x0,0x0],'textColor':[0xff,0xff,0xff],'fontStyle':'bold','fontSize':0xa}}),_0x4f0ad3=_0x385f5f[_0x1fcdcd(0x1f9)][_0x1fcdcd(0x255)][_0x1fcdcd(0x26c)]+0x1e;}),_0x385f5f[_0x3572d6(0x224)](_0x3572d6(0x201)),window[_0x3572d6(0x273)]['reload']();}),cancel_button[_0x5e70da(0x239)](_0x5e70da(0x1f0),function(){const _0x270369=_0x5e70da;window[_0x270369(0x273)][_0x270369(0x20e)]();}),confirm_btn['addEventListener'](_0x5e70da(0x1f0),function(){const _0x150199=_0x5e70da;document[_0x150199(0x26b)](_0x150199(0x25d))[_0x150199(0x25f)]=_0x150199(0x25e),document[_0x150199(0x26b)]('copy-right')[_0x150199(0x25f)]='display:\x20flex;',document[_0x150199(0x26b)](_0x150199(0x233))[_0x150199(0x25f)]='display:none;',document[_0x150199(0x26b)]('evaluation-container')['style']=_0x150199(0x25e),document[_0x150199(0x26b)]('student-form')['style']='display:block;';function _0x2f0669(_0x13478b,_0x3758ac){const _0x7010aa=_0x150199;let _0x1c822c=_0x13478b[_0x7010aa(0x251)](0x0,-0x1),_0x3b39f6=_0x1c822c['map'](_0x26882e=>{const _0x2fdc99=_0x7010aa;let _0x562feb=_0x26882e[_0x2fdc99(0x21e)][_0x2fdc99(0x276)]('\x20'),_0x8a6d9c=Number(_0x562feb[_0x2fdc99(0x260)]()),_0x2a3b96=_0x562feb[_0x2fdc99(0x21c)]('\x20');return{'mergedParts':_0x2a3b96,'lastPart':_0x8a6d9c};}),_0x11d46e=0x0,_0x5660cd=[],_0x2270a1=[];for(let _0x2eaddb=0x0;_0x2eaddb<_0x3b39f6[_0x7010aa(0x1f6)];_0x2eaddb++){let _0x54bf2b=_0x3b39f6[_0x2eaddb];if(!isNaN(_0x54bf2b[_0x7010aa(0x244)])){if(_0x11d46e+_0x54bf2b[_0x7010aa(0x244)]>_0x3758ac)break;_0x11d46e+=_0x54bf2b[_0x7010aa(0x244)],_0x5660cd[_0x7010aa(0x23e)]({'number':_0x54bf2b[_0x7010aa(0x244)],'mergedParts':_0x54bf2b[_0x7010aa(0x20d)]});let _0x1fe217=_0x54bf2b[_0x7010aa(0x20d)]['split']('\x20')[0x0];_0x2270a1[_0x7010aa(0x23e)](_0x1fe217),_0x54bf2b['firstValue']=_0x1fe217,_0x11d46e===_0x3758ac&&(_0x13478b['splice'](_0x2eaddb,0x1),_0x3b39f6=_0x13478b[_0x7010aa(0x251)](0x0,-0x1)[_0x7010aa(0x20c)](_0xd170b9=>{const _0x13a41c=_0x7010aa;let _0x35ba3d=_0xd170b9[_0x13a41c(0x21e)][_0x13a41c(0x276)]('\x20'),_0x53028d=Number(_0x35ba3d[_0x13a41c(0x260)]()),_0x42b83a=_0x35ba3d['join']('\x20');return{'mergedParts':_0x42b83a,'lastPart':_0x53028d};}),_0x2eaddb--);}else console[_0x7010aa(0x23d)]('\x22'+_0x54bf2b[_0x7010aa(0x244)]+'\x22\x20cannot\x20be\x20converted\x20to\x20a\x20number.');}for(let _0x384a26 of _0x5660cd){let _0x253d79=_0x13478b[_0x7010aa(0x237)](_0x52082b=>_0x52082b['COURSE_CODE']===_0x384a26[_0x7010aa(0x20d)]+'\x20'+_0x384a26['number']);_0x253d79!==-0x1&&_0x13478b[_0x7010aa(0x216)](_0x253d79,0x1);}return{'dataEqualToValue':_0x5660cd,'firstValues':_0x2270a1};}let _0x4302f2=Number(document[_0x150199(0x26b)](_0x150199(0x22d))[_0x150199(0x1ed)]),_0x342080=Number(document[_0x150199(0x26b)](_0x150199(0x1f5))['value'])-_0x4302f2,_0x4aabfb=Number(document[_0x150199(0x26b)](_0x150199(0x25c))[_0x150199(0x1ed)])-(_0x4302f2+_0x342080),_0xb439b7=Number(document[_0x150199(0x26b)](_0x150199(0x234))[_0x150199(0x1ed)]),_0x5ef95a=Number(document[_0x150199(0x26b)]('SecondYear-SecondSem')[_0x150199(0x1ed)])-_0xb439b7,_0xa32d1d=Number(document[_0x150199(0x26b)](_0x150199(0x26d))[_0x150199(0x1ed)])-(_0x5ef95a+_0xb439b7),_0x41503e=Number(document[_0x150199(0x26b)](_0x150199(0x206))[_0x150199(0x1ed)]),_0x480d6a=Number(document[_0x150199(0x26b)](_0x150199(0x219))[_0x150199(0x1ed)])-_0x41503e,_0x2b938d=Number(document[_0x150199(0x26b)](_0x150199(0x20a))[_0x150199(0x1ed)])-(_0x41503e+_0x480d6a),_0x505cc8=Number(document[_0x150199(0x26b)](_0x150199(0x254))['value']),_0x2e4771=Number(document[_0x150199(0x26b)](_0x150199(0x1fc))[_0x150199(0x1ed)])-_0x505cc8,_0x311fd3=Subject_Container[0x0],_0x4cc029=_0x2f0669(_0x311fd3,_0x4302f2),_0x37aa72=_0x2f0669(_0x311fd3,_0x342080),_0x4eceb8=_0x2f0669(_0x311fd3,_0x4aabfb),_0x5259cb=_0x2f0669(_0x311fd3,_0xb439b7),_0x290aef=_0x2f0669(_0x311fd3,_0x5ef95a),_0x36df67=_0x2f0669(_0x311fd3,_0xa32d1d),_0x2072be=_0x2f0669(_0x311fd3,_0x41503e),_0x4ce742=_0x2f0669(_0x311fd3,_0x480d6a),_0x2ec7f8=_0x2f0669(_0x311fd3,_0x2b938d),_0x53f738=_0x2f0669(_0x311fd3,_0x505cc8),_0xdca061=_0x2f0669(_0x311fd3,_0x2e4771);function _0x150d8b(_0x3db476,_0x5acd77){const _0x1e5218=_0x150199;_0x3db476[_0x1e5218(0x210)]['forEach']((_0x1a324e,_0x44e879)=>{const _0x249318=_0x1e5218;let _0x474fd3=_0x1a324e[_0x249318(0x20d)][_0x249318(0x276)]('\x20');_0x474fd3[_0x249318(0x227)](),_0x1a324e[_0x249318(0x20d)]=_0x474fd3[_0x249318(0x21c)]('\x20'),_0x1a324e[_0x249318(0x26a)]=_0x3db476[_0x249318(0x208)][_0x44e879];}),_0x22180a(_0x3db476,_0x5acd77);}function _0x22180a(_0xde13e5,_0x7d03b1){const _0x3153cf=_0x150199,_0x24b98d=document[_0x3153cf(0x26b)](_0x7d03b1);_0xde13e5[_0x3153cf(0x210)][_0x3153cf(0x21d)](_0x128c86=>{const _0x48becf=_0x3153cf,_0x3148b7=document[_0x48becf(0x248)]('tr');_0x3148b7[_0x48becf(0x263)]=_0x48becf(0x22a)+_0x128c86[_0x48becf(0x26a)]+_0x48becf(0x203)+_0x128c86[_0x48becf(0x20d)]+_0x48becf(0x246),_0x24b98d['appendChild'](_0x3148b7);});}_0x150d8b(_0x4cc029,_0x150199(0x241)),_0x150d8b(_0x37aa72,_0x150199(0x22f)),_0x150d8b(_0x4eceb8,_0x150199(0x217)),_0x150d8b(_0x5259cb,'student-SecondYear-FirstSem'),_0x150d8b(_0x290aef,_0x150199(0x262)),_0x150d8b(_0x36df67,_0x150199(0x25b)),_0x150d8b(_0x2072be,_0x150199(0x236)),_0x150d8b(_0x4ce742,_0x150199(0x238)),_0x150d8b(_0x2ec7f8,_0x150199(0x20b)),_0x150d8b(_0x53f738,_0x150199(0x21b)),_0x150d8b(_0xdca061,_0x150199(0x223));});
+const ToDownload = document.getElementById('downloadData');
+const confirm_btn = document.getElementById('btn-confirm');
+const cancel_button = document.getElementById('close-btn');
+
+
+let studentDetails = [];
+const Subject_Container=[];
+let firstThreeRows = []; // Array to store the first 3 rows
+let AllTotalUnits = [];
+let uniqueAllTotalUnits = [];
+const width = window.innerWidth;
+
+// window.addEventListener('resize', function() {
+//     var width = window.innerWidth;
+//     var element = document.getElementById('side-input-container');
+//     if (width <= 700) {
+//         element.style.display = 'flex';
+//         element.style.justifyContent = 'center';
+//         element.style.alignItems = 'center';
+//         element.style.position = 'fixed';
+//         element.style.top = '50%';
+//         element.style.left = '50%';
+//         element.style.width = '60%';
+//         element.style.height = '85%';
+//         element.style.borderRadius = '5px';
+//         element.style.transform = 'translate(-50%, -50%)';
+//     } else {
+//         // Reset styles when viewport width is more than 375px
+//         // Adjust as needed
+//         element.style.display = '';
+//         element.style.justifyContent = '';
+//         element.style.alignItems = '';
+//         element.style.position = '';
+//         element.style.top = '';
+//         element.style.left = '';
+//         element.style.width = '';
+//         element.style.height = '';
+//         element.style.borderRadius = '';
+//         element.style.transform = '';
+//     }
+// });
+
+
+
+
+function getPageText(pageNum, PDFDocumentInstance) {
+    return new Promise(function (resolve, reject) {
+        PDFDocumentInstance.getPage(pageNum).then(function (pdfPage) {
+            pdfPage.getTextContent().then(function (textContent) {
+                var textItems = textContent.items;
+                var rows = {};
+
+                for (var i = 0; i < textItems.length; i++) {
+                    var item = textItems[i];
+                    // Group items by their vertical position
+                    var top = Math.round(item.transform[5]);
+                    if (!rows[top]) rows[top] = [];
+                    rows[top].push(item.str);
+                }
+
+                // Sort rows by vertical position and concatenate the text items in each row
+                var sortedRows = Object.keys(rows).sort((a, b) => -a + b); // sort in reverse order
+                var finalString = "";
+                for (var i = 0; i < sortedRows.length; i++) {
+                    finalString += rows[sortedRows[i]].join(' ') + "\n";
+                }
+
+                resolve(finalString);
+            });
+        });
+    });
+}
+
+
+  // Drag and drop
+$('#file-upload-label').on('dragover', function(event) {
+    event.preventDefault();
+    $(this).addClass('dragover');
+});
+
+$('#file-upload-label').on('dragleave drop', function(event) {
+    event.preventDefault();
+    $(this).removeClass('dragover');
+});
+
+$('#file-upload-label').on('drop', function(event) {
+    event.preventDefault();
+    var file = event.originalEvent.dataTransfer.files[0];
+    document.getElementById('file-upload-label').style="display:none;"
+    document.getElementById('evaluation-container').style="display:block;"
+    
+    const width = window.innerWidth;
+    if (width > 700) {
+        document.getElementById('side-input-container').style = "top:20px; right:10px;transform:initial; height: auto;"
+        document.getElementById('copy-right').style = "display: none;"
+        document.getElementById('side-copy-right').style = "display: flex;bottom:-65px"
+        document.getElementById('header-container').style="display:none;"  
+    }
+    document.getElementById('section').style="margin-top:0px;"
+    document.getElementById('input-form').style="display:block;"
+    handleFileUpload(file);
+});
+
+$('#file-upload').on("change", function() {
+    if (this.files.length > 0) {
+        var file = this.files[0];
+        document.getElementById('file-upload-label').style="display:none;"
+        document.getElementById('evaluation-container').style="display:block;"
+        
+        if (width > 700) {
+            document.getElementById('side-input-container').style = "top:20px; right:10px;transform:initial; height: auto;";
+            document.getElementById('copy-right').style = "display: none;"
+            document.getElementById('side-copy-right').style = "display: flex;bottom:-65px";
+            document.getElementById('header-container').style="display:none;"
+        }
+        document.getElementById('section').style="margin-top:0px;"
+        document.getElementById('input-form').style="display:block;"
+        handleFileUpload(file);
+    } else {
+        console.log('No file selected');
+        document.getElementById('file-upload-label').style="display:block;"
+        document.getElementById('header-container').style="display:block;"
+    }
+});
+
+$('#file-upload-label').on("click", function() {
+    
+});
+
+function handleFileUpload(file) {
+    if (file.type !== 'application/pdf') {
+        console.error(file.name, 'is not a .pdf file.');
+        return;
+    }
+    var fileReader = new FileReader();  
+    fileReader.onload = function() {
+        var typedarray = new Uint8Array(this.result);
+
+        pdfjsLib.getDocument(typedarray).promise.then(function(pdf) {
+            console.log('PDF loaded');
+            
+            // Fetch the first page
+            var pageNumber = 1;
+            renderPage(pageNumber, pdf);
+
+            // Fetch the second page
+            pageNumber = 2;
+            renderPage(pageNumber, pdf);
+        }, function (reason) {
+            // PDF loading error
+            console.error(reason);
+        });
+    };
+    fileReader.readAsArrayBuffer(file);
+    $('#file-upload-label').text(file.name); // Display the name of the uploaded file on the label
+}
+
+function renderPage(pageNumber, pdf) {
+    pdf.getPage(pageNumber).then(function(page) {
+        
+        var scale = 1.5;
+        var viewport = page.getViewport({scale: scale});
+
+        // Prepare canvas using PDF page dimensions
+        var canvas = document.getElementById('the-canvas' + pageNumber); // use a different canvas for each page
+        if (!canvas) {
+            console.error('Canvas element with id "the-canvas' + pageNumber + '" not found.');
+            return;
+        }
+        var context = canvas.getContext('2d');
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        // Render PDF page into canvas context
+        var renderContext = {
+            canvasContext: context,
+            viewport: viewport
+        };
+        var renderTask = page.render(renderContext);
+        renderTask.promise.then(function () {
+        });
+
+        let List_Subjects=[];
+        let group = [];
+        async function processPage(pageNumber, pdf) {
+            return getPageText(pageNumber, pdf).then(function(textPage) {
+                var rows = textPage.split('\n');
+                
+                for (let i = 0; i < rows.length; i++) {
+                    if (Number.isInteger(parseFloat(rows[i]))) {
+                        AllTotalUnits.push(rows[i]);
+                    }else if (rows[i].match("OL")) {
+                        const columns = rows[i].split(' ');
+                        let newRow = columns.join(' ');
+                        const COURSE_CODE = newRow;
+                        group.push({COURSE_CODE});
+                    } else if (rows[i].trim() === '' && group.length > 0) {
+                        List_Subjects.push(group);
+                    } else if (rows[i].match("Student")) {
+                        const student = rows[i];
+                        studentDetails = student;
+                    }else if (1 < 4){
+                        firstThreeRows.push(rows[i]);
+                    }
+            }
+                // Push the last group if it's not empty
+                if (group.length > 0) {
+                    List_Subjects.push(group);
+                }
+            });
+        }
+     
+
+// Process the first page
+processPage(1, pdf)
+    .then(function() {
+        return processPage(2, pdf);
+        
+    })
+    .then(function() {
+        document.getElementById('school_name').innerHTML = firstThreeRows[0];
+        document.getElementById('school_branch').innerHTML = firstThreeRows[1];
+        document.getElementById('school_course').innerHTML = firstThreeRows[2];
+        document.getElementById('school_curriculum').innerHTML = firstThreeRows[3];
+        document.getElementById('student_details').innerHTML = studentDetails; 
+        List_Subjects = [...new Set(List_Subjects)];
+        Subject_Container.push(...List_Subjects);
+
+        uniqueAllTotalUnits = [...new Set(AllTotalUnits)];
+
+        if (width < 700) {
+            //First Year
+            document.getElementById('FirstYear-FirstSem').value = uniqueAllTotalUnits[0] || 0;
+            document.getElementById('FirstYear-SecondSem').value = uniqueAllTotalUnits[1] || 0;
+            document.getElementById('FirstYear-ThirdSem').value = uniqueAllTotalUnits[2] || 0;
+        
+            //Second Year
+            document.getElementById('SecondYear-FirstSem').value = uniqueAllTotalUnits[3] || 0;
+            document.getElementById('SecondYear-SecondSem').value = uniqueAllTotalUnits[4] || 0;
+            document.getElementById('SecondYear-ThirdSem').value = uniqueAllTotalUnits[5] || 0;
+        
+            //Third Year
+            document.getElementById('ThirdYear-FirstSem').value = uniqueAllTotalUnits[6] || 0;
+            document.getElementById('ThirdYear-SecondSem').value = uniqueAllTotalUnits[7] || 0;
+            document.getElementById('ThirdYear-ThirdSem').value = uniqueAllTotalUnits[8] || 0;
+        
+            //Fourth Year
+            document.getElementById('FourthYear-FirstSem').value = uniqueAllTotalUnits[9] || 0;
+            document.getElementById('FourthYear-SecondSem').value = uniqueAllTotalUnits[10] || 0;
+            document.getElementById('FourthYear-ThirdSem').value = uniqueAllTotalUnits[11] || 0;
+        }        
+        //alert("Copy all the total units of every semester and enter it to the field on the right side-form, you will see the units in the left-side 'STUDENT-EVALUATION' ");
+    });
+    });
+}
+
+ToDownload.addEventListener('click', function(){
+      // Get all the table bodies
+const tableBodies = document.querySelectorAll('tbody');
+
+let data = [];
+
+// Iterate over each table body
+tableBodies.forEach((tableBody, tableIndex) => {
+
+    // Get all the rows in the current table body
+    const rows = tableBody.querySelectorAll('tr');
+
+    rows.forEach((row, rowIndex) => {
+        const cells = row.querySelectorAll('td');
+        if (cells.length >= 3) {
+            const firstValue = cells[0].innerText;
+            const mergedParts = cells[1].innerText;
+            const inputGrade = cells[2].querySelector('.input_grades').value;
+            data.push([rowIndex, firstValue, mergedParts, inputGrade]);
+        }
+        
+    });
+});
+
+function addCenteredText(doc, text, y) {
+    let textWidth = doc.getStringUnitWidth(text) * doc.internal.getFontSize() / doc.internal.scaleFactor;
+    let pageCenter = doc.internal.pageSize.width / 2;
+    doc.text(text, pageCenter - textWidth / 2, y);
+}
+
+let doc = new jsPDF('p', 'pt', 'a4');
+let startY = 40;
+
+doc.setFontSize(20);
+doc.setFontStyle('bold');
+addCenteredText(doc, `${firstThreeRows[0]}`, startY);
+startY += 20;
+
+
+doc.setFontSize(13);
+addCenteredText(doc, `${firstThreeRows[1]}`, startY);
+startY += 30;
+
+doc.setFontStyle('normal');
+doc.setFontSize(11);
+addCenteredText(doc, `${firstThreeRows[2]}`, startY);
+startY += 10;
+
+doc.setFontSize(9);
+addCenteredText(doc, `${firstThreeRows[3]}`, startY);
+startY += 30;
+
+doc.setFontSize(11);
+doc.setFontStyle('normal');
+
+// Draw a horizontal line above the text
+doc.line(20, startY - 15, 570, startY - 15); 
+
+let startYForLine = startY; // Store the startY value before adding the text
+
+addCenteredText(doc, `${studentDetails}`, startY);
+startY += 30;
+
+// Draw a horizontal line below the text using startYForLine
+doc.line(20, startYForLine + 8, 570, startYForLine + 8); 
+
+
+
+doc.setFontSize(14);
+
+let theads = document.querySelectorAll('#prospectus-table thead');
+
+// Prepare an array to hold the data for each section
+let allData = [];
+let sectionData = [];
+studentDetails
+// Iterate over the data array
+for (let i = 0; i < data.length; i++) {
+    // If the first value resets to 0 and it's not the first row, start a new section
+    if (data[i][0] === 0 && i !== 0) {
+        allData.push(sectionData);
+        sectionData = [];
+    }
+
+    // Add the current row to the current section
+    sectionData.push(data[i].slice(1)); // Remove the index from the row
+}
+
+// Add the last section to allData
+allData.push(sectionData);
+
+// Iterate over allData to create a table for each section
+allData.forEach((sectionData, index) => {
+    // Extract the header text
+    let header = theads[index].innerText.trim();
+    
+    // Set the font size
+doc.setFontSize(10.5); // Adjust the font size as needed
+doc.setFontStyle('bold');
+// Calculate the width of the header text
+let headerWidth = doc.getStringUnitWidth(header) * doc.internal.getFontSize() / doc.internal.scaleFactor;
+
+// Calculate the center of the page
+let pageCenter = doc.internal.pageSize.width / 2;
+
+// Add the header to the PDF, centered
+doc.text(header, pageCenter - (headerWidth / 2), startY);
+doc.autoTable({
+    head: [['COURSE CODE', 'COURSE DESCRIPTION', 'GRADES']],
+    body: sectionData,
+    startY: startY + 10,
+    styles: {
+        fontSize: 8,
+        cellPadding: 2,
+    },
+    columnStyles: {
+        0: {cellWidth: 100, halign:'left',fontSize:'9',fontStyle:'bold'},
+        1: {cellWidth: 350, halign: 'left'},
+        2: {cellWidth: 50, halign: 'center',fontStyle: 'bold'}
+    },
+    headStyles: {
+        fillColor: [0, 0, 0],
+        textColor: [255, 255, 255],
+        fontStyle: 'bold',
+        fontSize: 10
+    }
+});
+
+    
+
+    // Update startY for the next table
+    startY = doc.autoTable.previous.finalY + 30; // Adjust this value as needed
+});
+
+doc.save('Unofficial-Prospectus.pdf');
+window.location.reload();
+    });
+
+    cancel_button.addEventListener('click', function(){
+        window.location.reload();
+    })
+
+    confirm_btn.addEventListener('click', function(){
+        document.getElementById('header-container').style="display:none;"
+        document.getElementById('copy-right').style = "display: flex;"
+        document.getElementById('side-input-container').style="display:none;"
+        document.getElementById('evaluation-container').style="display:none;"
+        document.getElementById('student-form').style="display:block;"
+
+        function processDataAndCalculateSum(DataGathered, valueToCompare) {
+            let AllData = DataGathered.slice(0, -1); // Remove the last element
+        
+            // Process data
+            let processedData = AllData.map(data => {
+                let parts = data.COURSE_CODE.split(' ');
+                let lastPart = Number(parts.pop()); // Convert to number here
+                let mergedParts = parts.join(' ');
+                return {
+                    mergedParts,
+                    lastPart
+                };
+            });
+        
+            let sum = 0;
+            let dataEqualToValue = [];
+            let firstValues = []; // New array to store the first values
+        
+            // Calculate sum and gather data
+            for (let i = 0; i < processedData.length; i++) {
+                let data = processedData[i];
+                if (!isNaN(data.lastPart)) {
+                    if (sum + data.lastPart > valueToCompare) {
+                        break;
+                    }
+                    sum += data.lastPart;
+                    dataEqualToValue.push({
+                        number: data.lastPart,
+                        mergedParts: data.mergedParts
+                    });
+                    let firstValue = data.mergedParts.split(' ')[0];
+                        firstValues.push(firstValue);
+    
+                        // Add the first value to the current object
+                        data.firstValue = firstValue;
+                    if (sum === valueToCompare) {
+                        // Remove the data from DataGathered
+                        DataGathered.splice(i, 1);
+                        // Reset processedData and i to reflect the change in DataGathered
+                        processedData = DataGathered.slice(0, -1).map(data => {
+                            let parts = data.COURSE_CODE.split(' ');
+                            let lastPart = Number(parts.pop());
+                            let mergedParts = parts.join(' ');
+                            return {
+                                mergedParts,
+                                lastPart
+                            };
+                        });
+                        i--;
+                    }
+                } else {
+                    console.log(`"${data.lastPart}" cannot be converted to a number.`);
+                }
+            }
+    
+            // Remove the data that has been used in the comparison from DataGathered
+            for (let data of dataEqualToValue) {
+                let index = DataGathered.findIndex(d => d.COURSE_CODE === data.mergedParts + ' ' + data.number);
+                if (index !== -1) {
+                    DataGathered.splice(index, 1);
+                }
+            }
+            // Return the data that adds up to the sum and the first values
+            return {
+                dataEqualToValue,
+                firstValues
+            };
+
+            
+            
+        }
+        
+    
+        let valueOFSem1 = Number(document.getElementById('FirstYear-FirstSem').value);
+        let valueOFSem2 = Number(document.getElementById('FirstYear-SecondSem').value) - valueOFSem1;
+        let valueOFSem3 = Number(document.getElementById('FirstYear-ThirdSem').value) - (valueOFSem1 + valueOFSem2);
+        let valueOFSem4 = Number(document.getElementById('SecondYear-FirstSem').value);
+        let valueOFSem5 = Number(document.getElementById('SecondYear-SecondSem').value) - valueOFSem4;
+        let valueOFSem6 = Number(document.getElementById('SecondYear-ThirdSem').value) - (valueOFSem5 + valueOFSem4);
+        let valueOFSem7 = Number(document.getElementById('ThirdYear-FirstSem').value);
+        let valueOFSem8 = Number(document.getElementById('ThirdYear-SecondSem').value) - valueOFSem7;
+        let valueOFSem9 = Number(document.getElementById('ThirdYear-ThirdSem').value) - (valueOFSem7 + valueOFSem8);
+        let valueOFSem10 = Number(document.getElementById('FourthYear-FirstSem').value);
+        let valueOFSem11 = Number(document.getElementById('FourthYear-SecondSem').value) - valueOFSem10;
+        
+        let DataGathered = Subject_Container[0];
+        let resultSem1 = processDataAndCalculateSum(DataGathered, valueOFSem1);
+        let resultSem2 = processDataAndCalculateSum(DataGathered, valueOFSem2);
+        let resultSem3 = processDataAndCalculateSum(DataGathered, valueOFSem3);
+        let resultSem4 = processDataAndCalculateSum(DataGathered, valueOFSem4);
+        let resultSem5 = processDataAndCalculateSum(DataGathered, valueOFSem5);
+        let resultSem6 = processDataAndCalculateSum(DataGathered, valueOFSem6);
+        let resultSem7 = processDataAndCalculateSum(DataGathered, valueOFSem7);
+        let resultSem8 = processDataAndCalculateSum(DataGathered, valueOFSem8);
+        let resultSem9 = processDataAndCalculateSum(DataGathered, valueOFSem9);
+        let resultSem10 = processDataAndCalculateSum(DataGathered, valueOFSem10);
+        let resultSem11 = processDataAndCalculateSum(DataGathered, valueOFSem11);
+    
+    function processSemesterData(resultSem, semesterId) {
+        resultSem.dataEqualToValue.forEach((item, index) => {
+            let parts = item.mergedParts.split(' ');
+            parts.shift(); // Remove the first part
+            item.mergedParts = parts.join(' '); // Join the remaining parts
+            item.firstValue = resultSem.firstValues[index]; // Add the first value
+        });
+        populateTable(resultSem, semesterId);
+    }
+    
+    function populateTable(StudentGrade, semesterId) {
+        const tableBody = document.getElementById(semesterId);
+        
+        StudentGrade.dataEqualToValue.forEach((Course_Code) => {
+          const row = document.createElement('tr');
+          row.innerHTML = `
+            <td>${Course_Code.firstValue}</td>
+            <td>${Course_Code.mergedParts}</td>
+            <td>
+              <input class="input_grades" placeholder="Grades"></input>
+            </td>
+          `;
+          tableBody.appendChild(row);
+        });
+        
+    }
+    
+    processSemesterData(resultSem1, 'student-FirstYear-FirstSem');
+    processSemesterData(resultSem2, 'student-FirstYear-SecondSem');
+    processSemesterData(resultSem3, 'student-FirstYear-ThirdSem');
+    processSemesterData(resultSem4, 'student-SecondYear-FirstSem');
+    processSemesterData(resultSem5, 'student-SecondYear-SecondSem');
+    processSemesterData(resultSem6, 'student-SecondYear-ThirdSem');
+    processSemesterData(resultSem7, 'student-ThirdYear-FirstSem');
+    processSemesterData(resultSem8, 'student-ThirdYear-SecondSem');
+    processSemesterData(resultSem9, 'student-ThirdYear-ThirdSem');
+    processSemesterData(resultSem10, 'student-FourthYear-FirstSem');
+    processSemesterData(resultSem11, 'student-FourthYear-SecondSem');
+    })
+
+
