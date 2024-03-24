@@ -265,3 +265,56 @@ td:nth-child(3){
 .fade-in-out {
     animation: fadeInOut 5s infinite;
 }
+
+@media (max-width: 700px) {
+    .canva-container{
+        display: none;
+    }
+    .side-input-container{
+       top: 38%;
+       height: auto;
+    }
+    #file-upload-label {
+        margin-top: 50px;
+        padding: 20px 30px 20px;
+    }
+        
+    .input-form{
+        font-size: 0.8em;
+    }
+    .log-container{
+        align-items: center;
+    }
+    .logo-text{
+        width: 230px;
+    }
+    #copy-right{
+        bottom: -50px;
+        font-size: 0.7em;
+    }
+    #copy-right img{
+        width: 30px;
+        height: 30px;
+    }
+    .student-container{
+        margin-top: 20px;
+        font-size: 0.8em;
+    }
+    .student-form{
+        font-size: 0.9em;
+    }
+    td{
+        font-size: 0.6em;
+    }
+    td:nth-child(1){
+        padding-right: 10px;
+    }
+    td:nth-child(3){
+        text-align: center;
+    }
+    .input_grades{
+        width: 35px;
+        font-size: 1em;
+    }
+
+}
