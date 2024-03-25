@@ -6,8 +6,9 @@ const cancel_button = document.getElementById('close-btn');
 let studentDetails = [];
 const Subject_Container=[];
 let firstThreeRows = []; // Array to store the first 3 rows
-
-
+let AllTotalUnits = [];
+let uniqueAllTotalUnits = [];
+const width = window.innerWidth;
 
 function getPageText(pageNum, PDFDocumentInstance) {
     return new Promise(function (resolve, reject) {
@@ -54,9 +55,15 @@ $('#file-upload-label').on('drop', function(event) {
     var file = event.originalEvent.dataTransfer.files[0];
     document.getElementById('file-upload-label').style="display:none;"
     document.getElementById('evaluation-container').style="display:block;"
-    document.getElementById('side-input-container').style="top:20px; right:10px;transform:initial; height: auto;"
-    document.getElementById('copy-right').style="bottom:-45px;"
-    document.getElementById('header-container').style="display:none;"
+    
+    const width = window.innerWidth;
+    if (width > 700) {
+        document.getElementById('side-input-container').style = "top:20px; right:10px;transform:initial; height: auto;"
+        document.getElementById('copy-right').style = "display: none;"
+        document.getElementById('side-copy-right').style = "display: flex;bottom:-65px"
+        document.getElementById('header-container').style="display:none;"  
+    }
+    document.getElementById('section').style="margin-top:0px;"
     document.getElementById('input-form').style="display:block;"
     handleFileUpload(file);
 });
@@ -66,9 +73,14 @@ $('#file-upload').on("change", function() {
         var file = this.files[0];
         document.getElementById('file-upload-label').style="display:none;"
         document.getElementById('evaluation-container').style="display:block;"
-        document.getElementById('side-input-container').style="top:20px; right:10px;transform:initial; height: auto;"
-        document.getElementById('copy-right').style="bottom:-45px;"
-        document.getElementById('header-container').style="display:none;"
+        
+        if (width > 700) {
+            document.getElementById('side-input-container').style = "top:20px; right:10px;transform:initial; height: auto;";
+            document.getElementById('copy-right').style = "display: none;"
+            document.getElementById('side-copy-right').style = "display: flex;bottom:-65px";
+            document.getElementById('header-container').style="display:none;"
+        }
+        document.getElementById('section').style="margin-top:0px;"
         document.getElementById('input-form').style="display:block;"
         handleFileUpload(file);
     } else {
@@ -142,7 +154,9 @@ function renderPage(pageNumber, pdf) {
                 var rows = textPage.split('\n');
                 
                 for (let i = 0; i < rows.length; i++) {
-                    if (rows[i].match("OL")) {
+                    if (Number.isInteger(parseFloat(rows[i]))) {
+                        AllTotalUnits.push(rows[i]);
+                    }else if (rows[i].match("OL")) {
                         const columns = rows[i].split(' ');
                         let newRow = columns.join(' ');
                         const COURSE_CODE = newRow;
@@ -162,6 +176,7 @@ function renderPage(pageNumber, pdf) {
                 }
             });
         }
+     
 
 // Process the first page
 processPage(1, pdf)
@@ -177,9 +192,32 @@ processPage(1, pdf)
         document.getElementById('student_details').innerHTML = studentDetails; 
         List_Subjects = [...new Set(List_Subjects)];
         Subject_Container.push(...List_Subjects);
-        alert("Copy all the total units of every semester and enter it to the field on the right side-form, you will see the units in the left-side 'STUDENT-EVALUATION' ");
+
+        uniqueAllTotalUnits = [...new Set(AllTotalUnits)];
+
+        if (width < 700) {
+            //First Year
+            document.getElementById('FirstYear-FirstSem').value = uniqueAllTotalUnits[0] || 0;
+            document.getElementById('FirstYear-SecondSem').value = uniqueAllTotalUnits[1] || 0;
+            document.getElementById('FirstYear-ThirdSem').value = uniqueAllTotalUnits[2] || 0;
+        
+            //Second Year
+            document.getElementById('SecondYear-FirstSem').value = uniqueAllTotalUnits[3] || 0;
+            document.getElementById('SecondYear-SecondSem').value = uniqueAllTotalUnits[4] || 0;
+            document.getElementById('SecondYear-ThirdSem').value = uniqueAllTotalUnits[5] || 0;
+        
+            //Third Year
+            document.getElementById('ThirdYear-FirstSem').value = uniqueAllTotalUnits[6] || 0;
+            document.getElementById('ThirdYear-SecondSem').value = uniqueAllTotalUnits[7] || 0;
+            document.getElementById('ThirdYear-ThirdSem').value = uniqueAllTotalUnits[8] || 0;
+        
+            //Fourth Year
+            document.getElementById('FourthYear-FirstSem').value = uniqueAllTotalUnits[9] || 0;
+            document.getElementById('FourthYear-SecondSem').value = uniqueAllTotalUnits[10] || 0;
+            document.getElementById('FourthYear-ThirdSem').value = uniqueAllTotalUnits[11] || 0;
+        }        
+        //alert("Copy all the total units of every semester and enter it to the field on the right side-form, you will see the units in the left-side 'STUDENT-EVALUATION' ");
     });
-     
     });
 }
 
@@ -318,6 +356,7 @@ doc.autoTable({
 });
 
 doc.save('Unofficial-Prospectus.pdf');
+window.location.reload();
     });
 
     cancel_button.addEventListener('click', function(){
@@ -325,6 +364,8 @@ doc.save('Unofficial-Prospectus.pdf');
     })
 
     confirm_btn.addEventListener('click', function(){
+        document.getElementById('header-container').style="display:none;"
+        document.getElementById('copy-right').style = "display: flex;"
         document.getElementById('side-input-container').style="display:none;"
         document.getElementById('evaluation-container').style="display:none;"
         document.getElementById('student-form').style="display:block;"
@@ -466,3 +507,5 @@ doc.save('Unofficial-Prospectus.pdf');
     processSemesterData(resultSem10, 'student-FourthYear-FirstSem');
     processSemesterData(resultSem11, 'student-FourthYear-SecondSem');
     })
+
+
