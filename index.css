@@ -123,7 +123,7 @@ section{
     top: 48%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 70%;
+    width: 90%;
     height: 75%;
     max-width: 100%;
     max-height: 100%;
@@ -184,13 +184,13 @@ section{
     font-family: Verdana;
 }
 .input_grades{
-    width: 25%;
+    width: 60px;
     font-family: verdana;
     text-align: center;
 }
 table{
     width: 100%;
-
+    border-collapse: collapse;
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 500;
@@ -203,17 +203,46 @@ table h3{
     text-align: center;
     text-decoration: underline;
 }
+th{
+    font-size: 0.9em;
+    background-color: #999999;
+    padding: 5px;
+    color: white;
+    margin: 0;
+    border: none;
+}
+th:nth-child(1){
+    font-size: 0.9em;
+    text-align: left;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+th:nth-child(6){
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+}
 td{
     font-size: 0.7em;
     font-family: verdana;
 }
 td:nth-child(1){
+    padding-left: 10px;
     padding-right: 50px;
     font: 1.1em;
     font-weight: bolder;
 }
-td:nth-child(3){
-    text-align: right;
+td:nth-child(2),
+td:nth-child(3),
+td:nth-child(4),
+td:nth-child(5){
+    padding-top: 5px;
+    text-align: center;
+    text-align: center;
+    align-items:center;
+}
+th:nth-child(5),
+th:nth-child(3){
+    width: 80px;
 }
 
 #student-FirstYear-FirstSem::after,
@@ -277,6 +306,14 @@ td:nth-child(3){
         margin-top: 50px;
         justify-content: center;
         transition: all 0.4s ease-in-out;
+    }
+    th:nth-child(3),
+    th:nth-child(4),
+    th:nth-child(6),
+    td:nth-child(3),
+    td:nth-child(4),
+    td:nth-child(6){
+        display: none;
     }
     .canva-container{
         display: none;
