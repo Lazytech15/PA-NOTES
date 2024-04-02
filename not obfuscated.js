@@ -613,3 +613,9 @@ window.location.reload();
     processSemesterData(resultSem10, 'student-FourthYear-FirstSem');
     processSemesterData(resultSem11, 'student-FourthYear-SecondSem');
     })
+
+//header animation
+    window.onload = function() {
+        var fullForm = document.getElementById("project-meaning");
+        fullForm.style.width = "100%";
+      };
