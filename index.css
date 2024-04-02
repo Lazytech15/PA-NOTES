@@ -8,7 +8,6 @@
 .header-container{
     margin-top: 30px;
     display: flex;
-
     justify-content: center;
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
@@ -22,12 +21,32 @@
     font-size: 14px;
 }
 .log-container img{
-    margin-top: -10px;
     margin-right: 10px;
     width: 80px;
     height: 80px;
     border-radius: 50%;
 }
+
+#project-acroname {
+    font-size: 1.7em;
+    animation: drop 2s forwards;
+  }
+  
+#project-meaning {
+    font-size: 1.1em;
+    width: 0;
+    color: black;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: width 2s;
+    transition-delay: 3s;
+  }
+  
+  @keyframes drop {
+    0% {transform: translateY(-50px);}
+    100% {transform: translateY(0);}
+  }
+
 .side-input-container{
     display: flex;
     justify-content: center;
@@ -302,6 +321,15 @@ th:nth-child(3){
 }
 
 @media (max-width: 700px) {
+    section{
+        margin-top: 80px;
+    }
+    #project-meaning{
+        font-size: 0.8em;
+    }
+    #project-meaning span {
+        white-space: wrap;
+    }
     th:nth-child(3),
     th:nth-child(4),
     th:nth-child(6),
@@ -328,6 +356,7 @@ th:nth-child(3){
     #file-upload-label {
         margin-top: 80px;
         padding: 20px 30px 20px;
+        height: 200px;
     }
         
     .input-form{
