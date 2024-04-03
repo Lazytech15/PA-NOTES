@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(OPES) Online Prospectus Evaluation System</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
+    body {
+        background-color: #f6f0f9;
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 18px;
+        background: #f6f0f9;
+        box-shadow:  5px 5px 5px #9d9a9f,
+             -5px -5px 5px #ffffff;
+    }
+    img {
+        position: relative;
+        left: 5%;
+    }
+    nav {
+        position: relative;
+        right: 5%;
+        font-family: 'Fredoka';
+        transition: 50ms ease-in-out;
+    }
+    nav a {
+        background: #8a65f1;
+        border-radius: 5px;
+        box-shadow:  2px 2px 3px #9d9a9f,
+             -2px -2px 3px #ffffff;
+        padding: 10px;
+        text-decoration: none;
+        color: white;
+        font-weight: 600;
+        
+    }
+    nav:hover {
+        transform: scale(1.1);
+    }
+
+    .opestitle {
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translate(0%, -50%);
+        font-weight: 500;
+        font-family: 'Fredoka';
+        color: #453474;
+    }
+    .opestitle p {
+        font-size: 3.8rem;
+    }
+    .opestitle span p {
+        width: 40%;
+        font-size: 1.1rem;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+    .swiper-container {
+      width: 50%;
+      margin: auto;
+      border-radius: 10px;
+      position: absolute;
+      box-shadow:  5px 5px 3px #9d9a9f,
+             -5px -5px 3px #ffffff;
+      background: #c3b1f5;
+      right: 5%;
+      top: 50%;
+      transform: translate(0%, -50%);
+      height: 50%;
+      overflow: hidden;
+      margin: auto;
+    }
+    .swiper-slide {
+        margin-top: 150px;
+      background: transparent;
+      transition: all 0.3s;
+      opacity: 0.6;
+    }
+    .swiper-slide img {
+      border-radius: 15px;
+      width: 100%;
+      box-shadow:  2px 2px 3px #9d9a9f;
+      cursor: pointer;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .swiper-slide.swiper-slide-active {
+      transform: scale(1.5);
+      opacity: 1;
+      z-index: 99;
+    }
+    
+    .swiper-slide:not(.swiper-slide-active) {
+      transform: scale(0.8);
+    }
+</style>
+
+<body>
+    <header>
+        <img src="/PA-NOTES-main/LOGASM.png" width="5%" />
+        <nav>
+            <a href="PA-NOTES-main/index.html">OPES PAGE</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="opestitle">
+            <p>OPES</p>
+            <span>Online Prospectus Evaluation System</span>
+            <br>
+            <span>
+                <p>
+                    To enhance and improve the enrollment system in Antipolo Campus. This system incorporates the student
+                    evaluation from the ICCT student portal. Utilizing this feature will lessen the problems that might
+                    be encountered related to the prospectus during the enrollment.
+                </p>
+            </span>
+        </div>
+    </main>
+    <aside>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img src="/assets/1.png" /></div>
+              <div class="swiper-slide"><img src="/assets/2.png" /></div>
+              <div class="swiper-slide"><img src="/assets/3.png" /></div>
+              <div class="swiper-slide"><img src="/assets/4.png" /></div>
+              <div class="swiper-slide"><img src="/assets/5.png" /></div>
+              <div class="swiper-slide"><img src="/assets/6.png" /></div>
+              <div class="swiper-slide"><img src="/assets/7.png" /></div>
+              <div class="swiper-slide"><img src="/assets/8.png" /></div>
+              <div class="swiper-slide"><img src="/assets/9.png" /></div>
+              <div class="swiper-slide"><img src="/assets/10.png" /></div>
+              <div class="swiper-slide"><img src="/assets/11.png" /></div>
+              <div class="swiper-slide"><img src="/assets/12.png" /></div>
+              <div class="swiper-slide"><img src="/assets/13.png" /></div>
+              <div class="swiper-slide"><img src="/assets/14.png" /></div>
+              <div class="swiper-slide"><img src="/assets/15.png" /></div>
+            </div>
+          </div>
+    </aside>
+</body>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 3,
+    centeredSlides: true,
+    loop: true,
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 1,
+      },
+      1024: {
+        slidesPerView: 3,
+      }
+    }
+  });
+</script>
+</html>
