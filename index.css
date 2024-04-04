@@ -467,6 +467,7 @@ th:nth-child(3){
         margin-right: 5px;
         text-align: center;
         padding: 10px;
+        font-size: 0.8em;
         background:#f6f0f9;
         color:#333333;
         border-radius: 10px;
@@ -482,7 +483,7 @@ th:nth-child(3){
     }
     
     .devDetails p{
-        display: block;
+       display: block;
        white-space: wrap;
        padding: 10px;
     }
