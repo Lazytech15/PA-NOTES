@@ -376,7 +376,7 @@ th:nth-child(3){
       margin-top: 40px;
       border-radius: 5px;
       box-shadow:  3px 3px 3px 3px #9d9a9f;
-      height: 130px;
+      height: 140px;
     }
     .opstitle-container h1 {
       padding-top: 10px;
@@ -458,6 +458,7 @@ th:nth-child(3){
         width: 95%;
         margin-bottom: 20px;
         overflow: hidden;
+        font-size: 0.9em;
     }
     .devDetails{
         display: flex;
@@ -467,11 +468,11 @@ th:nth-child(3){
         margin-right: 5px;
         text-align: center;
         padding: 10px;
-        font-size: 0.8em;
         background:#f6f0f9;
         color:#333333;
         border-radius: 10px;
         box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        height: 220px;
 
         font-family: "Open Sans", sans-serif;
         font-optical-sizing: auto;
@@ -483,13 +484,12 @@ th:nth-child(3){
     }
     
     .devDetails p{
-       display: block;
+        display: block;
        white-space: wrap;
-       padding: 10px;
     }
     .devDetails img{
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
         border-radius: 30%;
         margin-bottom: 10px;
     }
@@ -612,6 +612,7 @@ th:nth-child(3){
     .opstitle-container{
         width: 100%;
         height:auto;
+        padding-bottom: 10px;
     }
     .opstitle-container p {
         font-size: 0.7em;
