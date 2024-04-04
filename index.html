@@ -4,106 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>(OPES) Online Prospectus Evaluation System</title>
+    <link rel="stylesheet" href="index.css">
     <link rel="icon" href="assets/PA-NOTES.jpg" style="width: 16px; height: 16px; border-radius: 50%;" type="image/jpeg">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 </head>
 <style>
-    @import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
-    body {
-        background-color: #f6f0f9;
-    }
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-radius: 18px;
-        background: #f6f0f9;
-        box-shadow:  5px 5px 5px #9d9a9f,
-             -5px -5px 5px #ffffff;
-    }
-    img {
-        position: relative;
-        left: 5%;
-    }
-    nav {
-        position: relative;
-        right: 5%;
-        font-family: 'Fredoka';
-        transition: 50ms ease-in-out;
-    }
-    nav a {
-        background: #8a65f1;
-        border-radius: 5px;
-        box-shadow:  2px 2px 3px #9d9a9f,
-             -2px -2px 3px #ffffff;
-        padding: 10px;
-        text-decoration: none;
-        color: white;
-        font-weight: 600;
-        
-    }
-    nav:hover {
-        transform: scale(1.1);
-    }
-
-    .opestitle {
-        position: absolute;
-        top: 50%;
-        left: 5%;
-        transform: translate(0%, -50%);
-        font-weight: 500;
-        font-family: 'Fredoka';
-        color: #453474;
-    }
-    .opestitle p {
-        font-size: 3.8rem;
-    }
-    .opestitle span p {
-        width: 40%;
-        font-size: 1.1rem;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-
-    .swiper-container {
-      width: 50%;
-      margin: auto;
-      border-radius: 10px;
-      position: absolute;
-      box-shadow:  5px 5px 3px #9d9a9f,
-             -5px -5px 3px #ffffff;
-      background: #c3b1f5;
-      right: 5%;
-      top: 50%;
-      transform: translate(0%, -50%);
-      height: 50%;
-      overflow: hidden;
-      margin: auto;
-    }
-    .swiper-slide {
-        margin-top: 150px;
-      background: transparent;
-      transition: all 0.3s;
-      opacity: 0.6;
-    }
-    .swiper-slide img {
-      border-radius: 15px;
-      width: 100%;
-      box-shadow:  2px 2px 3px #9d9a9f;
-      cursor: pointer;
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .swiper-slide.swiper-slide-active {
-      transform: scale(1.5);
-      opacity: 1;
-      z-index: 99;
-    }
     
-    .swiper-slide:not(.swiper-slide-active) {
-      transform: scale(0.8);
-    }
 </style>
 
 <body>
@@ -113,22 +19,7 @@
             <a href="main.html">OPES PAGE</a>
         </nav>
     </header>
-
-    <main>
-        <div class="opestitle">
-            <p>OPES</p>
-            <span>Online Prospectus Evaluation System</span>
-            <br>
-            <span>
-                <p>
-                    To enhance and improve the enrollment system in Antipolo Campus. This system incorporates the student
-                    evaluation from the ICCT student portal. Utilizing this feature will lessen the problems that might
-                    be encountered related to the prospectus during the enrollment.
-                </p>
-            </span>
-        </div>
-    </main>
-    <aside>
+    <section id="swiper-sector">
         <div class="swiper-container">
             <div class="swiper-wrapper">
               <div class="swiper-slide"><img src="assets/1.png" /></div>
@@ -148,7 +39,76 @@
               <div class="swiper-slide"><img src="assets/15.png" /></div>
             </div>
           </div>
-    </aside>
+  </section>
+    <main>
+      <div class="opestitle">
+        <div class="opstitle-container">
+          <h1>OPES</h1>
+          <span>Online Prospectus Evaluation System</span>
+          <br>
+          <div class="opestittle-text">
+            <p>
+                  To enhance and improve the enrollment system in Antipolo Campus. This system incorporates the student
+                  evaluation from the ICCT student portal. Utilizing this feature will lessen the problems that might
+                  be encountered related to the prospectus during the enrollment.
+            </p>
+          </div>
+      </div>
+    </div>
+  </main>
+  <h1 id="about">ABOUT DEVELOPERS</h1>
+  <section id="about-section">
+    <div class="about_developer">
+      <div class="devDetails">
+        <img src="/assets/DevPic/ivan.jpg" alt="">
+        <h3>Bainco, Ivan Bong</h3>
+        <p><u>Back-End Developer</u></p>
+        <p><b>POSITION</b></p>
+      </div>
+      <div class="devDetails">
+        <img src="/assets/DevPic/emman.jpg" alt="">
+        <h3>Ablao, Emmanuel</h3>
+        <p><u>Back-End Developer</u></p>
+        <p><b>POSITION</b></p>
+      </div>
+      <div class="devDetails">
+        <img src="/assets/DevPic/jm.jpg" alt="">
+        <h3>Estareja, John Mark</h3>
+        <p><u>Front-End Developer</u></p>
+        <p><b>POSITION</b></p>
+      </div>
+      <div class="devDetails">
+        <img src="/assets/DevPic/ben.jpg" alt="">
+        <h3>Dolor, Ben Jerome</h3>
+        <p><u>Front-End Developer</u></p>
+        <p><b>POSITION</b></p>
+      </div>
+      <div class="devDetails">
+        <img src="assets/DevPic/Garts.jpg" alt="">
+        <h3>Garcia, Christian</h3>
+        <p><u>Budget management</u></p>
+        <p><b>POSITION</b></p>
+      </div>
+      <div class="devDetails">
+        <img src="assets/DevPic/genie.jpg" alt="">
+        <h3>Aricayos, Genei</h3>
+        <p><u>Budget management</u></p>
+        <p><b>POSITION</b></p>
+      </div>
+      <div class="devDetails">
+        <img src="assets/DevPic/kobs.jpg" alt="">
+        <h3>Santiago, Kobe</h3>
+        <p><u>Document & Research</u></p>
+        <p><b>POSITION</b></p>
+      </div>
+      <div class="devDetails">
+        <img src="assets/DevPic/andrie.jpg" alt="">
+        <h3>Romarate, Andrei</h3>
+        <p><u>Document & Research</u></p>
+        <p><b>POSITION</b></p>
+      </div>
+    </div>
+  </section>
 </body>
 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -158,7 +118,7 @@
     centeredSlides: true,
     loop: true,
     autoplay: {
-      delay: 3000,
+      delay: 4000,
       disableOnInteraction: false,
     },
     breakpoints: {

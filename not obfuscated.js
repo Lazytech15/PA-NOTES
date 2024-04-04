@@ -114,6 +114,7 @@ function handleFileUpload(file) {
             // Fetch the second page
             pageNumber = 2;
             renderPage(pageNumber, pdf);
+            
         }, function (reason) {
             // PDF loading error
             console.error(reason);
@@ -193,7 +194,6 @@ processPage(1, pdf)
         document.getElementById('student_details').innerHTML = studentDetails; 
         List_Subjects = [...new Set(List_Subjects)];
         Subject_Container.push(...List_Subjects);
-
         uniqueAllTotalUnits = [...new Set(AllTotalUnits)];
 
         if (width < 700) {
@@ -494,6 +494,7 @@ window.location.reload();
     function processSemesterData(resultSem, semesterId) {
         resultSem.dataEqualToValue.forEach((item, index) => {
             let parts = item.mergedParts.split(' ');
+            parts.shift();
             item.mergedParts = parts.join(' ');
             item.firstValue = resultSem.firstValues[index];
         });
@@ -503,52 +504,153 @@ window.location.reload();
     function populateTable(StudentGrade, semesterId) {
         const tableBody = document.getElementById(semesterId);
         let total = 0;
-        const ToCompare =[{'OLNSTP-2':'NSTP-1'},
-                          {'OLPHYE002':'PHYE001'},
-                          {'OLCPPROG2':'OLCPPROG1'},
-                          {'OLFIL-02':'OLFIL-01'},
-                          {'OLPHYE003':'PHYE001'},
-                          {'OLVAL02':'VAL01'},
-                          {'OLALTRI':'MATH01'},
-                          {'OLCC03':'CC02'},
-                          {'OLCPPROG3':'CPPROG2'},
-                          {'OLPHYE004':'PHYE01'},
-                          {'OLWS1':'CC02'},
-                          {'OLCC04':'CC03'},
-                          {'OLHCI1':'CC03'},
-                          {'OLMS1':'ALTRI'},
-                          {'OLPT1':'CC03'},
-                          {'OLCISCO-01':'PT1'},
-                          {'OLIM1':'CC04'},
-                          {'OLMS2':'MS1'},
-                          {'OLSP1':'CC04'},
-                          {'OLIM2':'IMFDBS'},
-                          {'OLSDF04':'CC03'},
-                          {'OLSIA1':'PT1'},
-                          {'OLSP2':'SP1'},
-                          {'OLCAPS1':'SE1'},
-                          {'OLCISCO-02':'CISCO-01'},
-                          {'OLIAS1':'SIA1'},
-                          {'OLIPT1':'PT1, PF1'},
-                          {'OLCAPS2':'CAPS1'},
-                          {'OLIPT1':'PT1, PF1'},
-                          {'OLCAPS2':'CAPS1'},
-                          {'OLCC05':'IM1'},
-                          {'OLIAS2':'IAS1'},
-                          {'OLPF1':'CC04'},
-                          {'OLIPT2':'IPT1'},
-                          {'OLITPRAC':'4th Year Standing'},
-                          {'OLSA01':'IAS2'}];
-
-        
+        // const ToCompare =[{'OLNSTP-2':'NSTP-1'},
+        //                   {'OLPHYE002':'PHYE001'},
+        //                   {'OLCPPROG2':'OLCPPROG1'},
+        //                   {'OLFIL-02':'OLFIL-01'},
+        //                   {'OLPHYE003':'PHYE001'},
+        //                   {'OLVAL02':'VAL01'},
+        //                   {'OLALTRI':'MATH01'},
+        //                   {'OLCC03':'CC02'},
+        //                   {'OLCPPROG3':'CPPROG2'},
+        //                   {'OLPHYE004':'PHYE01'},
+        //                   {'OLWS1':'CC02'},
+        //                   {'OLCC04':'CC03'},
+        //                   {'OLHCI1':'CC03'},
+        //                   {'OLMS1':'ALTRI'},
+        //                   {'OLPT1':'CC03'},
+        //                   {'OLCISCO-01':'PT1'},
+        //                   {'OLIM1':'CC04'},
+        //                   {'OLMS2':'MS1'},
+        //                   {'OLSP1':'CC04'},
+        //                   {'OLIM2':'IMFDBS'},
+        //                   {'OLSDF04':'CC03'},
+        //                   {'OLSIA1':'PT1'},
+        //                   {'OLSP2':'SP1'},
+        //                   {'OLCAPS1':'SE1'},
+        //                   {'OLCISCO-02':'CISCO-01'},
+        //                   {'OLIAS1':'SIA1'},
+        //                   {'OLIPT1':'PT1, PF1'},
+        //                   {'OLCAPS2':'CAPS1'},
+        //                   {'OLIPT1':'PT1, PF1'},
+        //                   {'OLCAPS2':'CAPS1'},
+        //                   {'OLCC05':'IM1'},
+        //                   {'OLIAS2':'IAS1'},
+        //                   {'OLPF1':'CC04'},
+        //                   {'OLIPT2':'IPT1'},
+        //                   {'OLITPRAC':'4th Year Standing'},
+        //                   {'OLSA01':'IAS2'}];
+        const ToCompare =[{'OLENG02':'OLENG01'},
+        //To be Fixed
+        {'OLCRIM PRAC2':'CRIM PRAC2'},
+        {'OLCRIM INTEG3':'MUST BE COMPLETED ALL ACADEMIC REQUIREMENTS'},
+        {'OLCRIM INTEG2':'MUST BE COMPLETED ALL ACADEMIC REQUIREMENTS'},
+        {'OLCRIM INTEG1':'MUST BE COMPLETED ALL ACADEMIC REQUIREMENTS'},
+        {'OLCRIM PRAC1':'4th YEAR STANDING'},
+        //-------------------------------------------------------------------
+        {'OLFIL-03':'OLFIL-02'},
+        {'OLCPFRS06':'OLCPFRS05'},
+        {'OLCPCRIM8':'OLCPCRIM8'},
+        {'OLCPCDI9':'CPCRIM1'},
+        {'OLCPFRS5':'OLCPFRS4'},
+        {'OLCPCRIM7':'OLCPCDI6'},
+        {'OLCPCLJ4':'OLCPCLJ3'},
+        {'OLCPCAD3':'OLCPCAD2'},
+        {'OLCFLM2':'CPCRIM1'},
+        {'OLCFLM1':'CPCRIM1'},
+        {'OLCPFRS4':'OLCPFRS3'},
+        {'OLCPCLJ3':'OLCPCLJ2'},
+        {'OLCPCDI8':'CPCRIM1'},
+        {'OLCPCDI7':'CPCRIM1'},
+        {'OLCPCDI6':'CPCDI5'},
+        {'OLCPCAD2':'CPCAD1'},
+        {'OLCPCRIM6':'CPCRIM1'},
+        {'OLCPCRIM5':'CPCRIM1'},
+        {'OLCPCLJ2':'CPCLJ1'},
+        {'OLCPCDI5':'CPCRIM1'},
+        {'OLCPCDI4':'CPCDI2'},
+        {'OLCPCAD1':'CPCRIM1'},
+        {'OLCPCRIM4':'CPCRIM1'},
+        {'OLCPLEA5':'OLCPFRS2'},
+        {'OLCPCDI3':'CPCRIM1'},
+        {'OLCPCDI2':'CPCRIM1'},
+        {'OLCPCLJ1':'OLCPCDI1'},
+        {'OLCPFRS2':'OLCPFRS1'},
+        {'OLCPLEA3':'OLCPLEA1'},
+        {'OLCPLEA2':'OLCPLEA1'},
+        {'OLPECRIM04':'PECRIM02'},
+        {'OLCPCDI1':'CPCRIM1'},
+        {'OLCPLEA1':'CPCRIM2'},
+        {'OLCPFRS1':'CHEM01'},
+        {'OLCPCRIM3':'OLCPCRIM1'},
+        {'OLPECRIM03':'OLPECRIM02'},
+        {'OLNSTP-2C':'OLNSTP-1C'},
+        {'OLPECRIM02':'OLPECRIM01'},
+        {'OLFM':'4th YEAR STANDING'},
+        {'OLLITEOO2':'LITE001'},
+        {'OLFMPE06':'MMPE01'},
+        {'OLCOMSAP2':'COMSAP1'},
+        {'OLCBFEAS01':'CBRES01, PSFM08'},
+        {'OLPSFM08':'CAE01'},
+        {'OLPSFM06':'OLPSFM01'},
+        {'OLPSFM05':'OLPSFM01'},
+        {'OLMMPE07':'CBTQM01'},
+        {'OLFMPE05':'CBTQM01'},
+        {'OLMMPE04':'CBTQM01'},
+        {'OLMMPE02':'MMPE03'},
+        {'OLFMPE04':'PSFM02'},
+        {'OLFMPE01':'OLPSFM01'},
+        {'OLFMPE02':'OLPSFM01'},
+        {'OLCBTAX01':'CBACTG01'},
+        {'OLCBRES01':'OLENG01'},
+        {'OLCAE01':'OLCBIBT01'},
+        {'OLPHYE002':'PHYE001'},
+        {'OLCPPROG2':'OLCPPROG1'},
+        {'OLFIL-02':'OLFIL-01'},
+        {'OLPHYE003':'PHYE001'},
+        {'OLVAL02':'VAL01'},
+        {'OLALTRI':'MATH01'},
+        {'OLCC03':'CC02'},
+        {'OLCPPROG3':'CPPROG2'},
+        {'OLPHYE004':'PHYE01'},
+        {'OLWS1':'CC02'},
+        {'OLCC04':'CC03'},
+        {'OLHCI1':'CC03'},
+        {'OLMS1':'ALTRI'},
+        {'OLPT1':'CC03'},
+        {'OLCISCO-01':'PT1'},
+        {'OLIM1':'CC04'},
+        {'OLMS2':'MS1'},
+        {'OLSP1':'CC04'},
+        {'OLIM2':'IMFDBS'},
+        {'OLSDF04':'CC03'},
+        {'OLSIA1':'PT1'},
+        {'OLSP2':'SP1'},
+        {'OLCAPS1':'SE1'},
+        {'OLCISCO-02':'CISCO-01'},
+        {'OLIAS1':'SIA1'},
+        {'OLIPT1':'PT1, PF1'},
+        {'OLCAPS2':'CAPS1'},
+        {'OLIPT1':'PT1, PF1'},
+        {'OLCAPS2':'CAPS1'},
+        {'OLCC05':'IM1'},
+        {'OLIAS2':'IAS1'},
+        {'OLPF1':'CC04'},
+        {'OLIPT2':'IPT1'},
+        {'OLITPRAC':'4th Year Standing'},
+        {'OLSA01':'IAS2'}];
         
                           StudentGrade.dataEqualToValue.forEach((Course_Code) => {
                             let replacementValue = 'NONE';
-                        
+                            let firstValueOfMergedParts = Course_Code.mergedParts.split(' ')[0];
                             ToCompare.forEach((obj) => {
-                                if (obj[Course_Code.firstValue]) {
+                                let combinedValue = Course_Code.firstValue + ' ' + firstValueOfMergedParts;
+                                if (obj[combinedValue]) {
+                                    replacementValue = obj[combinedValue];
+                                } else if(obj[Course_Code.firstValue]){
                                     replacementValue = obj[Course_Code.firstValue];
                                 }
+                                
                             });
                         
                             const row = document.createElement('tr');
@@ -614,7 +716,7 @@ window.location.reload();
     processSemesterData(resultSem11, 'student-FourthYear-SecondSem');
     })
 
-//header animation
+
     window.onload = function() {
         var fullForm = document.getElementById("project-meaning");
         fullForm.style.width = "100%";

@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap");
 
 *{
     margin: 0;
     padding: 0;
 }
+
+/* big screen view */
 .header-container{
     margin-top: 30px;
     display: flex;
@@ -320,6 +323,177 @@ th:nth-child(3){
     animation: fadeInOut 5s infinite;
 }
 
+/* landing page */
+
+    body {
+        background-color: #f6f0f9;
+    }
+    header {
+        position: fixed;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 18px;
+        background: #f6f0f9;
+        box-shadow:  5px 5px 5px #9d9a9f,
+             -5px -5px 5px #ffffff;
+             width: 100%;
+             top:-10px;
+        z-index: 9999;
+    }
+    header img {
+        margin-top: 10px;
+        margin-left: 20px;
+    }
+    nav {
+        position: relative;
+        right: 5%;
+        font-family: 'Fredoka';
+        transition: 50ms ease-in-out;
+    }
+    nav a {
+        background: #8a65f1;
+        border-radius: 5px;
+        box-shadow:  2px 2px 3px #9d9a9f,
+             -2px -2px 3px #ffffff;
+        padding: 10px;
+        text-decoration: none;
+        color: white;
+        font-weight: 600;
+        
+    }
+    nav:hover {
+        transform: scale(1.1);
+    }
+    main{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .opstitle-container{
+      margin-top: 40px;
+      border-radius: 5px;
+      box-shadow:  3px 3px 3px 3px #9d9a9f;
+      height: 130px;
+    }
+    .opstitle-container h1 {
+      padding-top: 10px;
+    }
+    .opestitle {
+        font-weight: 500;
+        font-family: 'Fredoka';
+        color: #453474;
+        text-align: center;
+        width: 80%;
+    }
+    .opestittle-text{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #swiper-sector{
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      height: 100%;
+      margin-top: 80px;
+    }
+    .swiper-container {
+      width: 95%;
+      height:auto;
+      margin-top: 50px;
+      border-radius: 10px;
+      box-shadow:  5px 5px 3px #9d9a9f,
+             -5px -5px 3px #ffffff;
+      background: #c3b1f5;
+      overflow: hidden;
+    }
+    .swiper-slide {
+      margin-top: 150px;
+      background: transparent;
+      transition: all 0.3s;
+      opacity: 0.6;
+    }
+    .swiper-slide img {
+      border-radius: 15px;
+      width: 100%;
+      box-shadow:  2px 2px 3px #9d9a9f;
+      cursor:pointer;
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 80px;
+      z-index: -1;
+    }
+    .swiper-slide.swiper-slide-active {
+      transform: scale(1.5);
+      opacity: 1;
+      z-index: 99;
+    }
+    
+    .swiper-slide:not(.swiper-slide-active) {
+      transform: scale(0.8);
+    }
+    #about{
+        text-align: center;
+        color:#453474;
+
+        font-family: "Open Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 800;
+        font-style: normal;
+        font-variation-settings:
+            "wdth" 100;
+    }
+    #about-section{
+        height: auto;
+    }
+    .about_developer{
+        padding: 10px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 95%;
+        margin-bottom: 20px;
+        overflow: hidden;
+    }
+    .devDetails{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5px;
+        text-align: center;
+        padding: 10px;
+        background:#f6f0f9;
+        color:#333333;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+        font-family: "Open Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 600;
+        font-style: normal;
+        font-variation-settings:
+            "wdth" 100;
+        font-size: 0.9em;
+    }
+    
+    .devDetails p{
+        display: block;
+       white-space: wrap;
+       padding: 10px;
+    }
+    .devDetails img{
+        width: 150px;
+        height: 150px;
+        border-radius: 30%;
+        margin-bottom: 10px;
+    }
+
+/* mobile view main page */
 @media (max-width: 700px) {
     section{
         margin-top: 80px;
@@ -391,6 +565,9 @@ th:nth-child(3){
         height: 75%;
         width: 75%;
     }
+    #student_details{
+        font-size: 0.7em;
+    }
     td{
         font-size: 0.7em;
     }
@@ -405,4 +582,44 @@ th:nth-child(3){
         font-size: 1em;
     }
 
+}
+/* mobile view landing page */
+@media (max-width: 700px) {
+    header{
+        height: 80px;
+    }
+    header img{
+        width: 60px;
+        height: 60px;
+    }
+    .swiper-container{
+        margin-top: 20px;
+        width: 90%;
+        padding: 10px;
+    }
+    .swiper-slide img {
+        border-radius: 5px;
+        height: 95px;
+        margin-bottom: 50px;
+    }
+    .swiper-slide.swiper-slide-active {
+        transform: scale(3);
+    }
+    main{
+        display: flex;
+    }
+    .opstitle-container{
+        width: 100%;
+        height:auto;
+    }
+    .opstitle-container p {
+        font-size: 0.7em;
+    }
+    .about_developer{
+        margin-top: -50px;
+        overflow-x: scroll;
+    }
+    .devDetails{
+        font-size: 0.8em;
+    }
 }
