@@ -41,12 +41,20 @@
       opacity: 1;
       z-index: 99;
     }
-    
     .swiper-slide:not(.swiper-slide-active) {
       transform: scale(0.8);
     }
+    #swiper2-sector{
+    display: none;
+  }
     /* mobile view landing page */
 @media (max-width: 700px) {
+  #swiper-sector{
+    display: none;
+  }
+  #swiper2-sector{
+    display: flex;
+  }
     header{
         height: 80px;
     }
@@ -61,12 +69,14 @@
     }
     .swiper-slide img {
         border-radius: 5px;
-        height: 95px;
-        margin-bottom: 50px;
-        width: 100%;
+        height: auto;
+        width: 130px;
     }
     .swiper-slide.swiper-slide-active {
-        transform: scale(3);
+        transform: scale(1.8);
+    }
+    .swiper-slide:not(.swiper-slide-active) {
+        transform: scale(0);
     }
     main{
         display: flex;
@@ -117,6 +127,26 @@
             </div>
           </div>
   </section>
+  <section id="swiper2-sector">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="assets/mobile-view01.png" /></div>
+          <div class="swiper-slide"><img src="assets/mobile-view02.png" /></div>
+          <div class="swiper-slide"><img src="assets/mobile-view03.png" /></div>
+          <div class="swiper-slide"><img src="assets/mobile-view04.png" /></div>
+          <div class="swiper-slide"><img src="assets/mobile-view05.png" /></div>
+          <div class="swiper-slide"><img src="assets/mobile-view06.png" /></div>
+          <div class="swiper-slide"><img src="assets/mobile-view07.png" /></div>
+          <div class="swiper-slide"><img src="assets/mobile-view08.png" /></div>
+          <div class="swiper-slide"><img src="assets/mobile-view09.png" /></div>
+          <div class="swiper-slide"><img src="assets/mobile-view10.png" /></div>
+          <div class="swiper-slide"><img src="assets/mobile-view11.png" /></div>
+          <div class="swiper-slide"><img src="assets/mobile-view12.png" /></div>
+          <div class="swiper-slide"><img src="assets/mobile-view13.png" /></div>
+          <div class="swiper-slide"><img src="assets/mobile-view14.png" /></div>
+        </div>
+      </div>
+</section>
     <main>
       <div class="opestitle">
         <div class="opstitle-container">
