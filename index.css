@@ -261,6 +261,9 @@ td:nth-child(5){
     text-align: center;
     align-items:center;
 }
+td:nth-child(2){
+    padding: 3px;
+}
 th:nth-child(5),
 th:nth-child(3){
     width: 80px;
