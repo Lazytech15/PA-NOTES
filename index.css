@@ -111,7 +111,14 @@
     color: #333333;
     border-color: #333333;
 }
-
+.loading-sign{
+    display: none;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: yellowgreen; 
+    color: rgb(255, 255, 255);
+}
 
 .input-form{
     margin-top: 40px ;
@@ -138,6 +145,7 @@ section{
 .evaluation-container #the-canvas1,
 .evaluation-container #the-canvas2{
     width: 60%;
+    display: none;
 }
 
 .student-form {
@@ -205,6 +213,35 @@ section{
     text-align: center;
     font-family: Verdana;
 }
+.guides{
+    margin-top: -10px;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+.guides h4{
+    text-align: left;
+    font-size: 1em;
+
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+.guides p{
+    text-align: left;
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+.guides #symbol-text{
+    text-align: center;
+    font-size: 0.6em;
+}
 .input_grades{
     width: 60px;
     font-family: verdana;
@@ -253,16 +290,14 @@ td:nth-child(1){
     font: 1.1em;
     font-weight: bolder;
 }
-
+td:nth-child(2),
 td:nth-child(3),
 td:nth-child(4),
 td:nth-child(5){
     padding-top: 5px;
     text-align: center;
+    text-align: center;
     align-items:center;
-}
-td:nth-child(2){
-    padding: 3px;
 }
 th:nth-child(5),
 th:nth-child(3){
@@ -346,6 +381,7 @@ th:nth-child(3){
     header img {
         margin-top: 10px;
         margin-left: 20px;
+        width: 50px;
     }
     nav {
         position: relative;
@@ -372,13 +408,14 @@ th:nth-child(3){
       justify-content: center;
       align-items: center;
       text-align: center;
+      margin-top: 50px;
       margin-bottom: 20px;
     }
     .opstitle-container{
       margin-top: 40px;
       border-radius: 5px;
       box-shadow:  3px 3px 3px 3px #9d9a9f;
-      height: 140px;
+      height: 170px;
     }
     .opstitle-container h1 {
       padding-top: 10px;
@@ -464,6 +501,15 @@ th:nth-child(3){
 
 /* mobile view main page */
 @media (max-width: 700px) {
+    .guides{
+        font-size: 0.5em;
+    }
+    .guides p{
+        margin-top: -5px;
+    }
+    .guides #symbol-text{
+        margin-top: 20px;
+    }
     section{
         margin-top: 80px;
     }
