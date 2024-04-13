@@ -22,6 +22,9 @@
         <div class="side-input-container" id="side-input-container">
             <input type="file" id="file-upload" style="display: none;" accept=".pdf" draggable="true"/>
             <label for="file-upload" id="file-upload-label">"Drag and drop a file or click here"</label>
+            <div class="loading-sign" id="loading-sign">
+                <h1>LOADING...</h1>
+            </div>
             <div class="input-form" id="input-form">
                     <h1>OPES</h1>
                     <p>Online Prospectus Evaluation System <br>'FORM'</p>
@@ -243,6 +246,16 @@
                 </table>
                 <button id="downloadData">DOWNLOAD</button>
                 <button id="close-btn">X</button>
+                <div class="guides">
+                    <h4>GUIDES FOR INPUT GRADES</h4>
+                    <p><b>OD</b> = OFFICIALLY DROPPED</p>
+                    <p><b>UD</b> = UNOFFICIALLY DROPPED</p>
+                    <p><b>INC</b> = INCOMPLETE</p>
+                    <p><b>N/A</b> = NOT APPLICABLE</p>
+                    <p><b>UW</b> = UNOFFICAL WITHDRAWN</p>
+                    <p><b>NA</b> = NOT ATTENDING</p>
+                    <p id="symbol-text">This system was developed by a group of students, Team LoiGasm. It is not an official prospectus format, but rather a project <br> designed to be used for school enrollment.</p>
+                </div>
             </div> 
         </div>
         <div class="copy-right" id="copy-right">
